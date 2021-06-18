@@ -153,8 +153,6 @@ Gracias también a mis companeros con los que he pasado estos últimos años de 
 
 Por último, agreder a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo.
 
-Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
-Además, la pareja quizás no sea para siempre, pero tu madre sí.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -218,18 +216,19 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este capítulo se introduce el proyecto.
-Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
+Hoy en día vivimos en un mundo digital en el cual hay una cantidad inmensa de datos. La obtención de estos crece a un ritmo exponencial, solo en 2018 se generaron 33 zettabytes (un zettabyte equivale a 1.000 millones de terabytes) lo que quivalea 16.5 veces más que en 2009 [referencia web]. A pesar de esto, solo somos capaces de procesar el 0.5 \% [referencia libro] y ese porcentaje cada vez va a menos ya que no se incrementa de la misma forma la capacidad de obtención que de procesado. El principal problema de esto está en la complejidad y cantidad de los datos pues los humanos no somos capaces muchas veces de extraer información útil de esos datos. Esto ha hecho que se fomente el estudio de distintos campos, uno de ellos es el \emph{machine learning}. Estas limitaciones mencionadas anteriormente desaparecen en el momento en el cual el \emph{machine learning} entre en juego, ya que es capaz de procesar grandes cantidades de datos complejos y transformarlos en información legible y fácil de analizar por los los humanos.
+
+El \emph{machine learning} (o aprendizaje automático) es la rama de la inteligencia artificial que trata de implementar el aprendizaje automático de máquinas a través de un entrenamiento. A pesar de ser un concepto relativamente nuevo, se basa en campos de estudio anteriores como la modelación estadística y o el reconocimiento de patrones.
 
 No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 
-Aconsejo a todo el mundo que mire y se inspire en memorias pasadas.
-Las memorias de los proyectos que he llevado yo están (casi) todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
+\section{Presentación de la aplicación}
+\label{sec:presentacionaplicacion}
 
-\section{Sección}
-\label{sec:seccion}
+Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algortimos de aprendizaje máquina de Naive Bayes y KNN en la web de LearningML que actualmente solo utiliza el método de redes neuronales para clasficar imágenes o texto.
 
-Esto es una sección, que es una estructura menor que un capítulo. 
+LearnignML es una web creada con Angular para que cualquier persona sin grandes conocimientos sobre el aprendizaje autmático pueda crear un modelo, entrenarlo y después probarlo. La web además permite descargar el modelo creado en un archivo JSON para después poder cargarlo sin necesidad de crearlo de nuevo, esto es muy útil ya que de esta manera no se tienen que volver a introducir todas las entradas para el aprendizaje, si no que directamente se puede importar un modelo creado previamente e introducir una entrada para ver su funcionamiento. También tiene la opcion de registrarse y poder guardar los modelos en tu cuenta o incluso tener proyectos compartidos entre varias personas. Por último, permite crear un modelo en Scratch y utilizarlo en la web aunque esta parte no se verá durante este trabajo.
+
 
 Por cierto, a veces me comentáis que no os compila por las tildes.
 Eso es un problema de codificación.
@@ -243,9 +242,6 @@ Recomiendo leer los consejos prácticos sobre escribir documentos científicos e
 Lee sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}. 
 Las comas en español no se ponen al tuntún.
 Y nunca, nunca entre el sujeto y el predicado (p.ej. en ``Yo, hago el TFG'' sobre la coma).
-La coma no debe separar el sujeto del predicado en una oración, pues se cortaría la secuencia natural del discurso.
-No se considera apropiado el uso de la llamada coma respiratoria o \emph{coma criminal}.
-Solamente se suele escribir una coma para marcar el lugar que queda cuando omitimos el verbo de una oración, pero es un caso que se da de manera muy infrecuente al escribir un texto científico (p.ej. ``El Real Madrid, campeón de Europa'').
 
 A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
 Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
@@ -272,28 +268,6 @@ Se puede utilizar para ofrecer el contenido de correos electrónicos, código, e
     Date: Fri Jan 14 19:25:51 2005
     Subject: [Mailman-Users] mailman issues
     Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
 \end{verbatim}
 }
 
@@ -356,10 +330,6 @@ Y, sí, también vienen en infinitivo.
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
-A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
-
 La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en Enero de 2021 y quería hacerlo a la vez que las prácticas entonces me puse en contacto con Gregorio y me comentó esto. Me llamo la atención la web de LearningML ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
 En principio este proyecto iba a ser tanto prácticas como TFG y le iba a poder dedicar bastante horas todos los dias, sin embargo, me aceptaron en unas prácticas y no tuve tanto tiempo ya que estas eran de jornada completa. Además de esto, aun tenía una asignatura pendiente asi que era difícil establecer un horario concreto para dedicarle tiempo al proyecto. Cuando no tenía un examen cerca, al salir de trabajar me ponía con ello un rato y luego los fines de semana por la mañana también le dedicaba algo de tiempo. 
 Recuerdo que primero tuve que aprender como funcionaba Angular y Typescript con un curso que tiene Juanda. Practicando y familiarizandome con la forma de trabajar en Angular.
@@ -379,8 +349,20 @@ Por último, quedaba la tarea de trasladar todo eso al papel. Me puse en contact
 
 En este apartado veremos tanto las tecnologias utilizadas como una breve explicación sobre lo que es el modelo de Bayes y de KNN.
 
+\section{HTML5} 
+\label{sec:html5}
+
+\section{TypeScript} 
+\label{sec:typescript}
+
+\section{Node.js} 
+\label{sec:nodejs}
+
+\section{JSON} 
+\label{sec:json}
+
 \section{Angular} 
-\label{sec:Angular}
+\label{sec:angular}
 
 Angular~\cite{angular} es un \emph{framework} de código abierto diseñado por Google. Permite crear aplicaciones web de una sola página, lo que se denomina SPA (Single Page Application). Utiliza TypeScript y HTML para el desarrollo de las aplicaciones web. 
 
@@ -420,25 +402,21 @@ Angular dispone de un enrutador, módulo que contiene un servicio para definir l
 
 Angular dispone de varias versiones, aportando todas ellas mejoras en dicho \emph{framework}. La primera versión de Angular, se conoce como AngularJS, y es la más distinta a las demás. El resto son actualizaciones de Angular 2. Cuando se definió la segunda versión se decidió modificar el nombre del \emph{framework} y dejarlo como Angular. La última versión estable es la versión 10 aunque LearningML utiliza la 8.
 
+\subsection{MVC} 
+\label{sec:mvc}
 
-
-
-
+\subsection{Angular CLI} 
+\label{sec:angularcli}
 
 Descripción de las tecnologías que utilizas en tu trabajo. 
 Con dos o tres párrafos por cada tecnología, vale. 
 Se supone que aquí viene todo lo que no has hecho tú.
 
 Puedes citar libros, como el de Bonabeau et al., sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
-Me encantan los procesos estigmérgicos.
-Deberías leer más sobre ellos.
-Pero quizás no ahora, que tenemos que terminar la memoria para sacarnos por fin el título.
 Nota que el \~ \ añade un espacio en blanco, pero no deja que exista un salto de línea. 
 Imprescindible ponerlo para las citas.
 
 Citar es importantísimo en textos científico-técnicos. 
-Porque no partimos de cero.
-Es más, partir de cero es de tontos; lo suyo es aprovecharse de lo ya existente para construir encima y hacer cosas más sofisticadas.
 ¿Dónde puedo encontrar textos científicos que referenciar?
 Un buen sitio es Google Scholar\footnote{\url{http://scholar.google.com}}.
 Por ejemplo, si buscas por ``stigmergy libre software'' para encontrar trabajo sobre software libre y el concepto de \emph{estigmergia} (¿te he comentado que me gusta el concepto de estigmergia ya?), encontrarás un artículo que escribí hace tiempo cuyo título es ``Self-organized development in libre software: a model based on the stigmergy concept''.
@@ -465,15 +443,14 @@ Compila el fichero \texttt{memoria.tex} (\texttt{pdflatex memoria.tex}), añade 
 
 También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
 
+\section{Modelo de Naive Bayes} 
+\label{sec:modelobayes}
 
+\section{Modelo KNN o K vecinos más cercanos} 
+\label{sec:modeloknn}
 
-\section{Sección 1} 
-\label{sec:seccion1}
 
 Hemos hablado de cómo incluir figuras.
-Pero no hemos dicho nada de tablas.
-A mí me gustan las tablas.
-Mucho.
 Aquí un ejemplo de tabla, la Tabla~\ref{tabla:ejemplo} (siento ser pesado, pero nota cómo he puesto la referencia).
 
 \begin{table}
@@ -505,6 +482,9 @@ Puedes entrar hasta el detalle.
 Es la parte más importante de la memoria, porque describe lo que has hecho tú.
 Eso sí, normalmente aconsejo no poner código, sino diagramas.
 
+\section{Reorganizar LearningML} 
+\label{sec:reorganizar}
+
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
@@ -512,8 +492,7 @@ Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es c�
 
 Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
 \LaTeX \ pone las figuras donde mejor cuadran. 
-Y eso quiere decir que quizás no lo haga donde lo hemos puesto\ldots
-Eso no es malo.
+
 A veces queda un poco raro, pero es la filosofía de \LaTeX: tú al contenido, que yo me encargo de la maquetación.
 
 \begin{figure}
@@ -536,7 +515,11 @@ Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura 
 
 Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
 
+\section{Crear el clasificador de Naive Bayes} 
+\label{sec:naivebayes}
 
+\section{Crear el clasificador de KNN} 
+\label{sec:knn}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXPERIMENTOS Y VALIDACIÓN %
@@ -549,6 +532,11 @@ Este capítulo se introdujo como requisito en 2019.
 Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
 Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
 
+\section{Prueba del clasificador de Naive Bayes} 
+\label{sec:pruebabayes}
+
+\section{Prueba del clasificador de KNN} 
+\label{sec:pruebaknn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
