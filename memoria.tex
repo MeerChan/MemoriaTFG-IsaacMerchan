@@ -216,7 +216,7 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-Hoy en día vivimos en un mundo digital en el cual hay una cantidad inmensa de datos. La obtención de estos crece a un ritmo exponencial, solo en 2018 se generaron 33 zettabytes (un zettabyte equivale a 1.000 millones de terabytes) lo que equivale a 16.5 veces más que en 2009 [referencia web]. A pesar de esto, solo somos capaces de procesar el 0.5 \% [referencia libro] y ese porcentaje cada vez va a menos ya que no se incrementa de la misma forma la capacidad de obtención que de procesado. El principal problema de esto está en la complejidad y cantidad de los datos pues los humanos no somos capaces muchas veces de extraer información útil de esos datos. Esto ha hecho que se fomente el estudio de distintos campos, uno de ellos es el \emph{machine learning}. Estas limitaciones mencionadas anteriormente desaparecen en el momento en el cual el \emph{machine learning} entre en juego, ya que es capaz de procesar grandes cantidades de datos complejos y transformarlos en información legible y fácil de analizar por los los humanos.
+Hoy en día vivimos en un mundo digital en el cual hay una cantidad inmensa de datos. La obtención de estos crece a un ritmo exponencial, solo en 2018 se generaron 33 zettabytes (un zettabyte equivale a 1.000 millones de terabytes) lo que equivale a 16.5 veces más que en 2009 ~\cite{webstatista}. A pesar de esto, solo somos capaces de procesar el 0.5 \% ~\cite{machinelearning} y ese porcentaje cada vez va a menos ya que no se incrementa de la misma forma la capacidad de obtención que de procesado. El principal problema de esto está en la complejidad y cantidad de los datos pues los humanos no somos capaces muchas veces de extraer información útil de esos datos. Esto ha hecho que se fomente el estudio de distintos campos, uno de ellos es el \emph{machine learning}. Estas limitaciones mencionadas anteriormente desaparecen en el momento en el cual el \emph{machine learning} entre en juego, ya que es capaz de procesar grandes cantidades de datos complejos y transformarlos en información legible y fácil de analizar por los los humanos.
 
 El \emph{machine learning} (o aprendizaje automático) es la rama de la inteligencia artificial que trata de implementar el aprendizaje automático de máquinas a través de un entrenamiento. A pesar de ser un concepto relativamente nuevo, se basa en campos de estudio anteriores como la modelación estadística y o el reconocimiento de patrones.
 
@@ -228,20 +228,6 @@ No te olvides de echarle un ojo a la página con los cinco errores de escritura 
 Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algortimos de aprendizaje automático de Naive Bayes y KNN en la web de LearningML que actualmente solo utiliza el método de redes neuronales para clasficar imágenes o texto.
 
 LearnignML es una web creada con Angular para que cualquier persona sin grandes conocimientos sobre el aprendizaje autmático pueda crear un modelo, entrenarlo y después probarlo. La web además permite descargar el modelo creado en un archivo JSON para después poder cargarlo sin necesidad de crearlo de nuevo, esto es muy útil ya que de esta manera no se tienen que volver a introducir todas las entradas para el aprendizaje, si no que directamente se puede importar un modelo creado previamente e introducir una entrada para ver su funcionamiento. También tiene la opcion de registrarse y poder guardar los modelos en tu cuenta o incluso tener proyectos compartidos entre varias personas. Por último, permite crear un modelo en Scratch y utilizarlo en la web aunque esta parte no se verá durante este trabajo.
-
-
-Por cierto, a veces me comentáis que no os compila por las tildes.
-Eso es un problema de codificación.
-Al guardar el archivo, guardad la codificación de ``ISO-Latin-1'' a ``UTF-8'' (o viceversa) y funcionará.
-
-\subsection{Estilo}
-\label{subsec:estilo}
-
-Recomiendo leer los consejos prácticos sobre escribir documentos científicos en \LaTeX \ de Diomidis Spinellis\footnote{\url{https://github.com/dspinellis/latex-advice}}.
-
-Lee sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}. 
-Las comas en español no se ponen al tuntún.
-Y nunca, nunca entre el sujeto y el predicado (p.ej. en ``Yo, hago el TFG'' sobre la coma).
 
 A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
 Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
@@ -257,19 +243,6 @@ Si no, no se crearán las referencias.
     \caption{Página con enlaces a hilos}
     \label{figura:foro_hilos}
  \end{figure}
-
-A continuación un bloque ``verbatim'', que se utiliza para mostrar texto tal cual.
-Se puede utilizar para ofrecer el contenido de correos electrónicos, código, entre otras cosas.
-
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-\end{verbatim}
-}
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -305,11 +278,7 @@ La memoria empieza con un resumen, en el que se explica brevemente en que consis
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
 Mi trabajo fin de grado consiste en añadir los algortimos de aprendizaje automático de Bayes y KNN de manera intuitiva e independientemente de si se quieren clasificar textos o imágenes a la web de LearningML.
-Recuerda que los objetivos siempre vienen en infinitivo.
-
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
@@ -317,13 +286,13 @@ Recuerda que los objetivos siempre vienen en infinitivo.
 Para la realización del objetivo general se han planteado los siguientes objetivos específicos:
 \begin{itemize}
   
-  \item Transformar las imagenes o texto de tal forma que obtengamos una misma estructura que se pueda pasar como entrada a los distintos algoritmos.
+	\item Transformar las imagenes o texto de tal forma que obtengamos una misma estructura que se pueda pasar como entrada a los distintos algoritmos.
  
-  \item Implementar el algortimo de Bayes y KNN para que funcionen como dos clasificadores de tal forma que primero entrenen con las entradas de aprendizaje y luego evaluen otra entrada proporcionada por el usuario y la asigne correctamente a uno de los grupos creados previamente.
+	\item Implementar el algortimo de Bayes y KNN para que funcionen como dos clasificadores de tal forma que primero entrenen con las entradas de aprendizaje y luego evaluen otra entrada proporcionada por el usuario y la asigne correctamente a uno de los grupos creados previamente.
   
-  \item Añadir en la interfaz una manera de poder elegir el tipo de algoritmo que se quiere utilizar de forma independiente a si los elementos a clasificar son texto o imágenes.
+	\item Añadir en la interfaz una manera de poder elegir el tipo de algoritmo que se quiere utilizar de forma independiente a si los elementos a clasificar son texto o imágenes.
 
-  \item Facilitar su uso para que sea sencilla y que todas las personas que la usen puedan entender y comprender su funcionamiento.
+	\item Facilitar su uso para que sea sencilla y que todas las personas que la usen puedan entender y comprender su funcionamiento.
 
 \end{itemize}
 Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
@@ -355,14 +324,84 @@ En este apartado veremos tanto las tecnologias utilizadas como una breve explica
 \section{HTML5} 
 \label{sec:html5}
 
+HTML ~\cite{htmlw3} ~\cite{htmlwhat} (HyperText Markup Language) es un lenguaje de marcado que se utiliza para describir la estructura de las páginas web. HTML5 es la quinta versión de este lenguaje. A lo largo de todas las versiones se han incorporado y eliminado diferentes características, con el fin de hacerlo más eficiente y facilitar el desarrollo web compatibles con distintos navegadores y plataformas, y manteniéndose también compatible con las versiones anteriores.
+A pesar de ser un estándar a cargo del Consorcio WWW, fue la asociación WHATWG, formada por Apple, Opera y Mozilla, la que publicó el primer borrador de HTML5 cuando W3C decidió dejar de evolucionar HTML. Más tarde W3C y WHATWG trabajaron juntos durante varios años en el desarrollo de HTML5, hasta que se separaron debido a sus diferentes objetivos, W3C quería publicar una versión terminada mientras que WHATWG quería seguir trabajando, manteniendo HTML5 en constante evolución.
+Algunas de las principales características de HTML5 son:
+\begin{itemize}
+	\item Incorpora nuevas etiquetas que especifican la semántica del contenido, ayudando a interpretar mejor la página. Antes solo teníamos \textless{}div\textgreater{} para definir cualquier sección, ahora podemos utilizar \textless{}header\textgreater{}, \textless{}nav\textgreater{}, \textless{}section\textgreater{}, \textless{}footer\textgreater{}, entre otros.
+
+	\item Ofrece también mejoras en los formularios como validaciones, nuevos tipos de campos (email, date, range, etc) y nuevos atributos, por ejemplo, multiple, placeholder o form.
+
+	\item Cuenta con numerosas APIs. Algunas de ellas son:
+
+	\begin{itemize}
+
+		\item Audio y video: permite incrustar elementos de audio y vídeo y reproducirlo desde el propio navegador.
+
+		\item Web Storage: permite almacenar datos del lado del cliente, cuando la sesión está activa.
+
+        	\item Canvas: que permite hacer dibujos, juegos, animaciones, etc.
+
+		\item Geolocalización: permite mostrar e interactuar con un mapa de Google Maps.
+
+	\end{itemize}
+\end{itemize}
+
 \section{TypeScript} 
 \label{sec:typescript}
+
+TypeScript~\cite{typescript} un lenguaje de programación, de código abierto y desarrollado por Microsoft.
+Nació como una necesidad de mejorar algunos problemas de JavaScript, entre ellos el hecho de que es bastante complicado crear aplicaciones a gran escala con JavaScript. Está pensado para el desarrollo de aplicaciones robustas y escalables, y se puede utilizar tanto en el lado del cliente como en el del servidor junto a Node.js.
+
+TypeScript es un superconjunto de JavaScript, es decir, se trata de un lenguaje creador a partir de JavaScript. Los programas de JavaScript son programas válidos de TypeScript. Esto permite integrar JavaScript en proyectos ya existentes, sin tener que rehacer todo el proyecto en TypeScript, ya que todo el código TypeScript se puede compilar en JavaScript nativo.
+Las características más importantes de TypeScript son:
+
+\begin{itemize}
+
+	\item Tenemos a nuestra disposición las herramientas de JavaScript ES6 (Ecmascript 6). De esta forma se mantiene actualizado con las últimas mejoras de JavaScript.
+
+	\item Cuenta con un tipado estático, por tanto, al crear variables podemos añadir el tipo de dato, así podemos evitar errores en tiempo de ejecución.
+
+	\item Objetos basados en clases, lo cual hace más sencilla la programación orientada a objetos y añade más funcionalidad.
+
+\end{itemize}
 
 \section{Node.js} 
 \label{sec:nodejs}
 
-\section{JSON} 
-\label{sec:json}
+Node~\cite{nodejs} es un entorno de ejecución de JavaScript controlado por eventos asíncronos, diseñado para construir aplicaciones de red escalables.
+Fue creado por Ryan Dahl en 2009 y está influenciado por algunos sistemas como Event Machine de Ruby ó Twisted de Python.
+
+Cuando se utiliza JavaScript en el lado del cliente, es el navegador quien, a través de un programa interno (un motor), interpreta el código JavaScript. De este mismo modo, Node.js proporciona un entorno de ejecución JavaScript del lado del servidor, haciendo uso del motor V8 de Google, que se encarga de interpretar el código y ejecutarlo.
+El motor V8 es el que Google usa en su navegador Chrome y es posible descargarlo e introducirlo en cualquier aplicación.
+
+Node.js está pensado para soportar grandes cantidades de solicitudes muy altas gracias a su naturaleza asíncrona. El modelo de concurrencia más común está basado en la utilización de hilos del sistema operativo. Se genera un nuevo hilo para cada conexión, de modo que a mayor cantidad de personas, mayor cantidad de recursos consumidos del servidor y mayor número de servidores son necesarios. Node.js emplea un único hilo y un bucle de eventos asíncrono. Las nuevas peticiones son tratadas como eventos en este bucle,de esta forma, no se produce ningún tipo de bloqueo en el flujo de trabajo.
+
+\section{Archivos JSON} 
+\label{sec:archivosjson}
+
+JSON (JavaScript Object Notation - Notación de Objetos de JavaScript) es un formato de intercambio de datos ~\cite{json}. Es sencillo tanto de escribir como de leer, lo que facilita que tanto los humanos como las máquinas sean capaces de utilizarlos y generarlos. Aunque esta basdo en un subconjunto del lenguaje de programación Javascript, es un formato de texto completamente independiente del lenguaje.
+
+En el siguiente texto en formato JSON, podemos ver las dos estructuras que nos ofrece, una colección de pares de nombre/valor y una lista de valores. En el ejemplo, vemos que el tipo de clasificador será de texto en este caso y que dentro de los datos tendremos dos etiquetas, una de vocales con una lista de las entradas que pertenecen a esta etiqueta y otra de consonantes. 
+{\footnotesize
+\begin{verbatim}
+{
+    "type": "text",
+    "data": {
+        "vocales": [
+            "aaa",
+            "eee",
+            "iii"
+        ],
+        "consonantes": [
+            "sss",
+            "ddd",
+            "fff"
+        ]
+    }
+}
+\end{verbatim}
+}
 
 \section{Angular} 
 \label{sec:angular}
@@ -412,11 +451,11 @@ Las aplicaciones web se suelen desarrollar siguiendo una serie de pautas. El pat
 
 \begin{itemize}
   
-  \item \textbf{Modelo:} es la representacion de los datos de toda la aplicación y, por tanto, maneja las consultas y todas las acciones relacionadas con base de datos en caso de que las hubiera. También tratará los datos para cumplir con las funcionalidades de la aplicacióon.
+	\item \textbf{Modelo:} es la representacion de los datos de toda la aplicación y, por tanto, maneja las consultas y todas las acciones relacionadas con base de datos en caso de que las hubiera. También tratará los datos para cumplir con las funcionalidades de la aplicacióon.
  
-  \item \textbf{Vista:} recibe los datos y los sirve al usuario final en la interfaz. Ni el controlador ni el modelo se preocupan por el diseño ni la apariencia final, de todo el apartado visual eso se encargarán las vistas.
+	\item \textbf{Vista:} recibe los datos y los sirve al usuario final en la interfaz. Ni el controlador ni el modelo se preocupan por el diseño ni la apariencia final, de todo el apartado visual eso se encargarán las vistas.
 
-  \item \textbf{Controlador:} es el elemento principal, encargado de responder a las acciones de entrada y lanzar una serie de funciones asignadas previamente. Es decir, recibe un evento de entrada, se comunica con el modelo en caso de que sea necesario, consultan las vistas y responden al evento con una salida.
+	\item \textbf{Controlador:} es el elemento principal, encargado de responder a las acciones de entrada y lanzar una serie de funciones asignadas previamente. Es decir, recibe un evento de entrada, se comunica con el modelo en caso de que sea necesario, consultan las vistas y responden al evento con una salida.
 
 \end{itemize}
 
@@ -424,75 +463,50 @@ Las principales ventajas del MVC son las siguientes:
 
 \begin{itemize}
   
-  \item Mejora la escalabilidad, puesto que es un modelo sencillo en el que cada tipo de lógica esta separado.
+	\item Mejora la escalabilidad, puesto que es un modelo sencillo en el que cada tipo de lógica esta separado.
  
-  \item Facilita mantenimiento.
+	\item Facilita mantenimiento.
 
-  \item Ofrece la posibilidad de reutilizar los componentes.
+	\item Ofrece la posibilidad de reutilizar los componentes.
 
 \end{itemize}
 
 \subsection{Angular CLI} 
 \label{sec:angularcli}
 
-Angular CLI (Command Line Interface) ~\cite{angularcli} es una herramienta de línea de instrucciones creada por el equipo de Angular. Es muy util a la hora de iniciar una aplicación web diseña con Angular, ya que con una sola instrucción, se genera el esqueleto de carpetas y archivos necesarios de la aplicación. Además, contiene herramientas predefinidas que ayudan al desarrollo y mantenimiento de este tipo de aplicaciones. Al crear una aplicación web con Angular CLI, dentro de la estructura de archivos, se crea un archivo de configuración, en el cual se añaden las dependencias necesarias para que la aplicación web compile y ejecute. Este archivo se va modificando conforme se van creando los componentes, servicios o directivas. Para ello, Angular CLI tiene instrucciones que permiten crear estas clases de manera sencilla, creando los distintos archivos que conforman un componente, un servicio o una directiva. Entre las herramientas predefinidas destaca el compilador, el sistema de testing y el servidor web.
+Angular CLI (Command Line Interface) ~\cite{articulobayes} es una herramienta de línea de instrucciones creada por el equipo de Angular. Es muy util a la hora de iniciar una aplicación web diseña con Angular, ya que con una sola instrucción, se genera el esqueleto de carpetas y archivos necesarios de la aplicación. Además, contiene herramientas predefinidas que ayudan al desarrollo y mantenimiento de este tipo de aplicaciones. Al crear una aplicación web con Angular CLI, dentro de la estructura de archivos, se crea un archivo de configuración, en el cual se añaden las dependencias necesarias para que la aplicación web compile y ejecute. Este archivo se va modificando conforme se van creando los componentes, servicios o directivas. Para ello, Angular CLI tiene instrucciones que permiten crear estas clases de manera sencilla, creando los distintos archivos que conforman un componente, un servicio o una directiva. Entre las herramientas predefinidas destaca el compilador, el sistema de testing y el servidor web.
 
-
-
-Puedes citar libros, como el de Bonabeau et al., sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
-Nota que el \~ \ añade un espacio en blanco, pero no deja que exista un salto de línea. 
-Imprescindible ponerlo para las citas.
-
-Citar es importantísimo en textos científico-técnicos. 
-¿Dónde puedo encontrar textos científicos que referenciar?
-Un buen sitio es Google Scholar\footnote{\url{http://scholar.google.com}}.
-Por ejemplo, si buscas por ``stigmergy libre software'' para encontrar trabajo sobre software libre y el concepto de \emph{estigmergia} (¿te he comentado que me gusta el concepto de estigmergia ya?), encontrarás un artículo que escribí hace tiempo cuyo título es ``Self-organized development in libre software: a model based on the stigmergy concept''.
-Si pulsas sobre las comillas dobles (entre la estrella y el ``citado por ...'', justo debajo del extracto del resumen del artículo, te saldrá una ventana emergente con cómo citar.
-Abajo a la derecha, aparece un enlace BibTeX.
-Púlsalo y encontrarás la referencia en formato BibTeX, tal que así:
-
-{\footnotesize
-\begin{verbatim}
-@inproceedings{robles2005self,
-  title={Self-organized development in libre software:
-         a model based on the stigmergy concept},
-  author={Robles, Gregorio and Merelo, Juan Juli\'an 
-          and Gonz\'alez-Barahona, Jes\'us M.},
-  booktitle={ProSim'05},
-  year={2005}
-}
-\end{verbatim}
-}
-
-Copia el texto en BibTeX y pégalo en el fichero \texttt{memoria.bib}, que es donde están las referencias bibliográficas.
-Para incluir la referencia en el texto de la memoria, deberás citarlo, como hemos hecho antes con~\cite{bonabeau:_swarm}, lo que pasa es que en vez de el identificador de la cita anterior (bonabeau:\_swarm), tendrás que poner el nuevo (robles2005self).
-Compila el fichero \texttt{memoria.tex} (\texttt{pdflatex memoria.tex}), añade la bibliografía (\texttt{bibtex memoria.aux}) y vuelve a compilar \texttt{memoria.tex} (\texttt{pdflatex memoria.tex})\ldots y \emph{voilà} ¡tenemos una nueva cita~\cite{robles2005self}!
 
 También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
 
 \section{Modelo de Naive Bayes} 
 \label{sec:modelobayes}
 
+El modelo de Naive Bayes ~\cite{articulobayes} consiste en un clasificador probabilístico bastante simple y que supone que las distintas características que se evalúan son independientes. Aunque esto no siempre es así, cuando evaluamos una gran cantidad de características, tiende a cumplirse. Esto es lo que simplifica en gran medida el clasificador y por lo que es muy utilizado cuando se necesitan procesar grandes dimensiones de datos y no se requiere demasiada exactitud. Este clasficador requiere unos datos de entrada de entrenamiento y cuantos más reciba, mejor funcionará. Lo que hace Naive Bayes es aprender de los datos de entrenamiento y luego predice la clase de la entrada de prueba con la mayor probabilidad a posteriori.
+
+La fórmula de la probabilidad de una clase C dadas unas características desde F1 a Fn es la figura ~\ref{fig:formulabayes}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=9cm, keepaspectratio]{img/formulabayes}
+	\caption{Fórmula de probabilidad de Naive Bayes.}
+	\label{fig:formulabayes}
+\end{figure}
+
+En la práctica ~\cite{machinelearning} solo importa el numerador, puesto que el denominador no depende de C y los valores de Fi son datos, por lo que el denominador es constante en la práctica. En el numerador es donde se asume que cada Fi es independiente de cualquier otra Fj (siempre que j es distinta de i) cuando estas dependen de C. Esto significa que haciendo estos supuestos, la probabilidad de C teniendo en cuenta las variables clasificatorias puede expresarse como muestra la imágen ~\ref{fig:ffinalbayes}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{img/ffinalbayes}
+  \caption{Fórmula de final de Naive Bayes.}\label{fig:ffinalbayes}
+\end{figure}
+
+donde Z es un factor que depende unicamente de F1 \dots Fn, es decir, constante si los valores de Fi son conocidos.
+
+Lo que hace el clasificador finalmente es calcular la probabilidad de cada posible clase con las características de entrada y asgina la entrada a esa clase.
+
 \section{Modelo KNN o K vecinos más cercanos} 
 \label{sec:modeloknn}
-
-
-Hemos hablado de cómo incluir figuras.
-Aquí un ejemplo de tabla, la Tabla~\ref{tabla:ejemplo} (siento ser pesado, pero nota cómo he puesto la referencia).
-
-\begin{table}
- \begin{center}
-  \begin{tabular}{ | l | c | r |} % tenemos tres colummnas, la primera alineada a la izquierda (l), la segunda al centro (c) y la tercera a la derecha (r). El | indica que entre las columnas habrá una línea separadora.
-    \hline
-    Uno & 2 & 3 \\ \hline % el hline nos da una línea vertical
-    Cuatro & 5 & 6 \\ \hline
-    Siete & 8 & 9 \\
-    \hline
-  \end{tabular}
-  \label{tabla:ejemplo}
-  \caption{Ejemplo de tabla. Aquí viene una pequeña descripción (el \emph{caption}) del contenido de la tabla. Si la tabla no es autoexplicativa, siempre viene bien aclararla aquí.}
- \end{center}
-\end{table}
 
 
 
@@ -545,8 +559,13 @@ Si utilizas una base de datos, no te olvides de incluir también un diagrama de 
 \section{Crear el clasificador de Naive Bayes} 
 \label{sec:naivebayes}
 
+
+
 \section{Crear el clasificador de KNN} 
 \label{sec:knn}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXPERIMENTOS Y VALIDACIÓN %
@@ -617,10 +636,10 @@ Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+Aquí viene lo que has aprendido en el Trabajo Fin de Grado.
 
 \begin{enumerate}
-  \item Aquí viene uno.
+  \item dd
   \item Aquí viene otro.
 \end{enumerate}
 
