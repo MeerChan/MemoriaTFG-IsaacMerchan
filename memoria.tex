@@ -135,7 +135,7 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2021
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia / mi abuelo / mi abuela}
+mi familia y amigos}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +151,7 @@ Quería agradecer también a mis amigos por estar siempre dispuestos a sacar un 
 
 Gracias también a mis companeros con los que he pasado estos últimos años de mi vida y una etapa muy importante, sin ellos esto hubiera sido aún más difícil. Han hecho que las clases, las tardes de estudio, las prácticas y, en general, la carrera sea más divertida.
 
-Por último, agreder a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo.
+Por último, agredecer a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo y a Juan David por dejarme colaborar en su página.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,33 +216,17 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-Hoy en día vivimos en un mundo digital en el cual hay una cantidad inmensa de datos. La obtención de estos crece a un ritmo exponencial, solo en 2018 se generaron 33 zettabytes (un zettabyte equivale a 1.000 millones de terabytes) lo que equivale a 16.5 veces más que en 2009 ~\cite{webstatista}. A pesar de esto, solo somos capaces de procesar el 0.5 \% ~\cite{machinelearning} y ese porcentaje cada vez va a menos ya que no se incrementa de la misma forma la capacidad de obtención que de procesado. El principal problema de esto está en la complejidad y cantidad de los datos pues los humanos no somos capaces muchas veces de extraer información útil de esos datos. Esto ha hecho que se fomente el estudio de distintos campos, uno de ellos es el \emph{machine learning}. Estas limitaciones mencionadas anteriormente desaparecen en el momento en el cual el \emph{machine learning} entre en juego, ya que es capaz de procesar grandes cantidades de datos complejos y transformarlos en información legible y fácil de analizar por los los humanos.
+Hoy en día vivimos en un mundo digital en el cual hay una cantidad inmensa de datos. La obtención de estos crece a un ritmo exponencial, solo en 2018 se generaron 33 zettabytes (un zettabyte equivale a 1.000 millones de terabytes) lo que equivale a 16.5 veces más que en 2009 ~\cite{webstatista}. A pesar de esto, solo somos capaces de procesar el 0.5 \% ~\cite{machinelearning} y ese porcentaje cada vez va a menos ya que no se incrementa de la misma forma la capacidad de obtención que de procesado. El principal problema de esto está en la complejidad y cantidad de los datos pues los humanos no somos capaces muchas veces de extraer información útil de esos datos. Esto ha hecho que se fomente el estudio de distintos campos, uno de ellos es el \emph{machine learning}. Estas limitaciones mencionadas anteriormente desaparecen en el momento en el cual el \emph{machine learning} entra en juego, ya que es capaz de procesar grandes cantidades de datos complejos y transformarlos en información legible y fácil de analizar por los los humanos.
 
 El \emph{machine learning} (o aprendizaje automático) es la rama de la inteligencia artificial que trata de implementar el aprendizaje automático de máquinas a través de un entrenamiento. A pesar de ser un concepto relativamente nuevo, se basa en campos de estudio anteriores como la modelación estadística y o el reconocimiento de patrones.
-
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 
 \section{Presentación de la aplicación}
 \label{sec:presentacionaplicacion}
 
-Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algortimos de aprendizaje automático de Naive Bayes y KNN en la web de LearningML que actualmente solo utiliza el método de redes neuronales para clasficar imágenes o texto.
+Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algortimos de aprendizaje automático de Naive Bayes y K-NN en la web de LearningML que actualmente solo utiliza el método de redes neuronales para clasficar imágenes o texto.
 
-LearnignML es una web creada con Angular para que cualquier persona sin grandes conocimientos sobre el aprendizaje autmático pueda crear un modelo, entrenarlo y después probarlo. La web además permite descargar el modelo creado en un archivo JSON para después poder cargarlo sin necesidad de crearlo de nuevo, esto es muy útil ya que de esta manera no se tienen que volver a introducir todas las entradas para el aprendizaje, si no que directamente se puede importar un modelo creado previamente e introducir una entrada para ver su funcionamiento. También tiene la opcion de registrarse y poder guardar los modelos en tu cuenta o incluso tener proyectos compartidos entre varias personas. Por último, permite crear un modelo en Scratch y utilizarlo en la web aunque esta parte no se verá durante este trabajo.
+LearnignML es una web creada por Juan David Rodríguez García utilizando Angular y esta construida de tal manera que cualquier persona sin grandes conocimientos sobre el aprendizaje autmático pueda crear un modelo, entrenarlo y después probarlo. La web además permite descargar el modelo creado en un archivo JSON para después poder cargarlo sin necesidad de crearlo de nuevo, esto es muy útil ya que de esta manera no se tienen que volver a introducir todas las entradas para el aprendizaje, si no que directamente se puede importar un modelo creado previamente e introducir una entrada para ver su funcionamiento. También tiene la opcion de registrarse y poder guardar los modelos en tu cuenta o incluso tener proyectos compartidos entre varias personas. Por último, permite crear un modelo en Scratch y utilizarlo en la web aunque esta parte no se verá durante este trabajo.
 
-A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
-Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
-También habrás tomado nota de cómo se ponen las ``comillas dobles'' para que se muestren correctamente. 
-Nota que hay unas comillas de inicio (``) y otras de cierre (''), y que son diferentes.
-Volviendo a las referencias, nota que al compilar, la primera vez se crea un diccionario con las referencias, y en la segunda compilación se ``rellenan'' estas referencias. 
-Por eso hay que compilar dos veces tu memoria.
-Si no, no se crearán las referencias.
-
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -278,7 +262,7 @@ La memoria empieza con un resumen, en el que se explica brevemente en que consis
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-Mi trabajo fin de grado consiste en añadir los algortimos de aprendizaje automático de Bayes y KNN de manera intuitiva e independientemente de si se quieren clasificar textos o imágenes a la web de LearningML.
+Mi trabajo fin de grado consiste en añadir los algortimos de aprendizaje automático de Bayes y K-NN de manera intuitiva e independientemente de si se quieren clasificar textos o imágenes a la web de LearningML.
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
@@ -286,17 +270,15 @@ Mi trabajo fin de grado consiste en añadir los algortimos de aprendizaje autom�
 Para la realización del objetivo general se han planteado los siguientes objetivos específicos:
 \begin{itemize}
   
-	\item Transformar las imagenes o texto de tal forma que obtengamos una misma estructura que se pueda pasar como entrada a los distintos algoritmos.
+	\item Reorganizar la manera de trabajar de LearningML para separar la obtención de datos del algorítmo utilizado.
  
-	\item Implementar el algortimo de Bayes y KNN para que funcionen como dos clasificadores de tal forma que primero entrenen con las entradas de aprendizaje y luego evaluen otra entrada proporcionada por el usuario y la asigne correctamente a uno de los grupos creados previamente.
+	\item Implementar el algorítmo de Bayes y K-NN para que funcionen como dos clasificadores de tal forma que primero entrenen con las entradas de aprendizaje y luego evaluen otra entrada proporcionada por el usuario y la asigne correctamente a uno de los grupos creados previamente.
   
-	\item Añadir en la interfaz una manera de poder elegir el tipo de algoritmo que se quiere utilizar de forma independiente a si los elementos a clasificar son texto o imágenes.
+	\item Añadir en la interfaz una manera de poder elegir el tipo de algorítmo que se quiere utilizar de forma independiente a si los elementos a clasificar son texto o imágenes.
 
-	\item Facilitar su uso para que sea sencilla y que todas las personas que la usen puedan entender y comprender su funcionamiento.
+	\item Dejar que el usuario pueda tocar algunos de los parámetros de los clasificadores.
 
 \end{itemize}
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
 
 
 \section{Planificación temporal}
@@ -305,9 +287,9 @@ Y, sí, también vienen en infinitivo.
 La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en Enero de 2021 y quería hacerlo a la vez que las prácticas entonces me puse en contacto con Gregorio y me comentó esto. Me llamo la atención la web de LearningML ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
 En principio este proyecto iba a ser tanto prácticas como TFG y le iba a poder dedicar bastante horas todos los dias, sin embargo, me aceptaron en unas prácticas y no tuve tanto tiempo ya que estas eran de jornada completa. Además de esto, aun tenía una asignatura pendiente asi que era difícil establecer un horario concreto para dedicarle tiempo al proyecto. Cuando no tenía un examen cerca, al salir de trabajar me ponía con ello un rato y luego los fines de semana por la mañana también le dedicaba algo de tiempo. 
 Recuerdo que primero tuve que aprender como funcionaba Angular y Typescript con un curso que tiene Juanda. Practicando y familiarizandome con la forma de trabajar en Angular.
-Después tuve varias reuniones con Juanda (Juan David Rodríguez García, creador de LearningML, esto irá en la introduccion) para ver como funcionaba la aplicacion de LearningML y donde había que añadir los cambios.
-También tuve que buscar que librerias ya construidas de Bayes y KNN podiamos adaptar para usarlas en la web y finalmente ponerme a ello.
-Por último, quedaba la tarea de trasladar todo eso al papel. Me puse en contacto con mi tutor y enseguida me paso una plantilla con los apartados a rellenar y...continuará
+Después tuve varias reuniones con Juanda (creador de LearningML) para ver como funcionaba la aplicacion de LearningML y donde había que añadir los cambios.
+También tuve que buscar que librerias ya construidas de Bayes y K-NN podiamos adaptar para usarlas en la web y finalmente ponerme a ello. Para K-NN si que conseguí encontrar una librería que me sirvió aunque por como se obtienen los datos, había que procesarlos de nuevo antes de usarlos. Para Bayes no encontré nada y tuve que crear el clasificador desde cero lo que me llevo algo más de tiempo que en el otro caso.
+Por último, quedaba la tarea de trasladar todo eso al papel. Me puse en contacto con mi tutor y enseguida me paso una plantilla con los apartados a rellenar y comencé a hacerlo hasta que finalmente, con no mucho tiempo de margen para entregar el trabajo, terminé.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,7 +301,7 @@ Por último, quedaba la tarea de trasladar todo eso al papel. Me puse en contact
 \chapter{Estado del arte}
 \label{chap:estado}
 
-En este apartado veremos tanto las tecnologias utilizadas como una breve explicación sobre lo que es el modelo de Bayes y de KNN.
+En este apartado veremos tanto las tecnologias utilizadas como una breve explicación sobre lo que es el modelo de Bayes y de K-NN.
 
 \section{HTML5} 
 \label{sec:html5}
@@ -482,7 +464,7 @@ También existe la posibilidad de poner notas al pie de página, por ejemplo, un
 \section{Modelo de Naive Bayes} 
 \label{sec:modelobayes}
 
-El modelo de Naive Bayes ~\cite{articulobayes} consiste en un clasificador probabilístico bastante simple y que supone que las distintas características que se evalúan son independientes. Aunque esto no siempre es así, cuando evaluamos una gran cantidad de características, tiende a cumplirse. Esto es lo que simplifica en gran medida el clasificador y por lo que es muy utilizado cuando se necesitan procesar grandes dimensiones de datos y no se requiere demasiada exactitud. Este clasficador requiere unos datos de entrada de entrenamiento y cuantos más reciba, mejor funcionará. Lo que hace Naive Bayes es aprender de los datos de entrenamiento y luego predice la clase de la entrada de prueba con la mayor probabilidad a posteriori.
+El modelo de Naive Bayes ~\cite{articulobayes} consiste en un clasificador probabilístico bastante simple y que supone que las distintas características que se evalúan son independientes. Aunque esto no siempre es así, cuando evaluamos una gran cantidad de características, tiende a cumplirse. Esto es lo que simplifica en gran medida el clasificador y por lo que es muy utilizado cuando se necesitan procesar grandes dimensiones de datos y no se requiere demasiada exactitud. Este clasficador requiere unos datos de entrada de entrenamiento y cuantos más reciba, mejor funcionará. Además, el modelo de Naive Bayes es un modelo paramétrico, es decir, usa el conjunto de entrenamiento para aprender el modelo explícitamente. Lo que hace Naive Bayes es aprender de los datos de entrenamiento y luego predice la clase de la entrada de prueba con la mayor probabilidad a posteriori.
 
 La fórmula de la probabilidad de una clase C dadas unas características desde F1 a Fn es la figura ~\ref{fig:formulabayes}.
 
@@ -493,7 +475,7 @@ La fórmula de la probabilidad de una clase C dadas unas características desde 
 	\label{fig:formulabayes}
 \end{figure}
 
-En la práctica ~\cite{machinelearning} solo importa el numerador, puesto que el denominador no depende de C y los valores de Fi son datos, por lo que el denominador es constante en la práctica. En el numerador es donde se asume que cada Fi es independiente de cualquier otra Fj (siempre que j es distinta de i) cuando estas dependen de C. Esto significa que haciendo estos supuestos, la probabilidad de C teniendo en cuenta las variables clasificatorias puede expresarse como muestra la imágen ~\ref{fig:ffinalbayes}.
+En la práctica ~\cite{machinelearning} solo importa el numerador, puesto que el denominador no depende de C y los valores de Fi son datos, por lo que el denominador es constante en la práctica. En el numerador es donde se asume que cada Fi es independiente de cualquier otra Fj (siempre que j es distinta de i) cuando estas dependen de C. Esto significa que haciendo estos supuestos, la probabilidad de C teniendo en cuenta las variables clasificatorias puede expresarse como muestra la imágen ~\ref{fig:ffinalbayes} donde Z es un factor que depende unicamente de F1 \dots Fn, es decir, constante si los valores de Fi son conocidos.
 
 \begin{figure}
   \centering
@@ -501,13 +483,21 @@ En la práctica ~\cite{machinelearning} solo importa el numerador, puesto que el
   \caption{Fórmula de final de Naive Bayes.}\label{fig:ffinalbayes}
 \end{figure}
 
-donde Z es un factor que depende unicamente de F1 \dots Fn, es decir, constante si los valores de Fi son conocidos.
-
 Lo que hace el clasificador finalmente es calcular la probabilidad de cada posible clase con las características de entrada y asgina la entrada a esa clase.
 
-\section{Modelo KNN o K vecinos más cercanos} 
+\section{Modelo K-NN o K vecinos más cercanos} 
 \label{sec:modeloknn}
 
+El modelo de K-NN (\emph{k-nearest neighbors}) o \emph{k} vecinos más cercanos ~\cite{knn1} ~\cite{knn2} es un método estadístico de reconocimiento de patrones supervisado. Es un modelo no paramétrico ya que usa directamente los datos de entrenamiento para inferir cada vez la clasificación de una nueva entrada pero sin construir explicitamente un modelo. Lo primero que hace el algorítmo de K-NN es colocar las entradas de entrenamiento en una dimensión de tamaño i, donde i es el número de características. Luego coloca la entrada que queremos clasificar en esta misma dimensión. Después de esto, calcula la distancia a los K puntos más cercanos y en función de la clase de la que tenga más vecinos cerca calsificara la entrada en esa clase. Lo más habitual es seleccionar valores de K pequeños e impares, para evitar los empates. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{img/knn}
+  \caption{Clasificador K-NN}\label{fig:knn}
+\end{figure}
+
+
+En la imagen  ~\ref{fig:knn} podemos ver como en este caso, las características serían dos, una en cada eje y por otro lado tendríamos tendríamos dos clases. En el caso de utilizar una K con valor tres, asignaría la entrada que estamos evaluando a la clase B, sin embargo, si tomamos el valor siete para la K, la clasificaría como clase A. Con este ejemplo, nos damos cuenta de que es importante que el valor de K sea pequeño. Este parámetro será uno de los que pueda modificar el usuario en la web de LearningML.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -551,17 +541,14 @@ A veces queda un poco raro, pero es la filosofía de \LaTeX: tú al contenido, q
  
 Recuerda que toda figura que añadas a tu memoria debe ser explicada.
 Sí, aunque te parezca evidente lo que se ve en la figura~\ref{fig:arquitectura}, la figura en sí solamente es un apoyo a tu texto.
-Así que explica lo que se ve en la figura, haciendo referencia a la misma tal y como ves aquí.
-Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura del \emph{parser} básico, que consta de seis componentes diferentes: los datos se obtienen de la red, y según el tipo de dato, se pasará a un \emph{parser} específico y bla, bla, bla\ldots
 
-Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
 
 \section{Crear el clasificador de Naive Bayes} 
 \label{sec:naivebayes}
 
 
 
-\section{Crear el clasificador de KNN} 
+\section{Crear el clasificador de K-NN} 
 \label{sec:knn}
 
 
@@ -581,7 +568,7 @@ Incluye también los resultados de validación que permiten afirmar que tus resu
 \section{Prueba del clasificador de Naive Bayes} 
 \label{sec:pruebabayes}
 
-\section{Prueba del clasificador de KNN} 
+\section{Prueba del clasificador de K-NN} 
 \label{sec:pruebaknn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
