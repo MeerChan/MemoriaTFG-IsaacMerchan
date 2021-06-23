@@ -461,6 +461,13 @@ Angular CLI (Command Line Interface) ~\cite{articulobayes} es una herramienta de
 
 También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
 
+\section{MobileNets} 
+\label{sec:mobilenets}
+
+MobileNets ~\cite{mobilenets} es, además de una librería de TensorFlow la cual vamos a utilizar, una red neuronal convolucional más eficiente ya que se basa en una capa convolucional normal, de la dimensión deseada, pero con un solo filtro. De esta manera, al pasar información por una capa se genera una sola convolución, que esta a su vez sirve como entrada a otra capa de convolución de tamaño fijo de filtro 1x1, con el número de filtros deseados en la convolución a sustituir.
+
+Aunque todo esto suena bastante complejo, lo que a nosotros nos interesa es que vamos a usar esta librería para transformar las imágenes en vectores que serán las entradas del clasificador sin importar el tipo. Lo que haremos será quitar la última capa de la red neuronal que genera MobileNets y quedarnos con ese vector.
+
 \section{Modelo de Naive Bayes} 
 \label{sec:modelobayes}
 
@@ -515,6 +522,18 @@ Eso sí, normalmente aconsejo no poner código, sino diagramas.
 
 \section{Reorganizar LearningML} 
 \label{sec:reorganizar}
+
+Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web, es su estructura, por lo que vamos a ver como funcionaba la de LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por modulos, componentes y servicios. Según estaba construido LearningML, en el módulo principal  \emph{AppModule} se carga el componente  \emph{ml-model.component} 
+
+\begin{itemize}
+  
+	\item LabeledDataManager
+ 
+	\item ImageClassifierService
+
+	\item ClassifierService
+
+\end{itemize}
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
