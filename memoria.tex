@@ -151,7 +151,7 @@ Quería agradecer también a mis amigos por estar siempre dispuestos a sacar un 
 
 Gracias también a mis companeros con los que he pasado estos últimos años de mi vida y una etapa muy importante, sin ellos esto hubiera sido aún más difícil. Han hecho que las clases, las tardes de estudio, las prácticas y, en general, la carrera sea más divertida.
 
-Por último, agredecer a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo y a Juan David por dejarme colaborar en su página.
+Por último, agredecer a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo y a Juanda por dejarme colaborar en su página.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -408,7 +408,7 @@ Al igual que en JavaScript, los módulos de Angular permiten importar y exportar
 
 \textbf{Componentes}. 
 
-Las aplicaciones Angular tienen un componente que es nexo de unión entre los diferentes componentes que forman la aplicación y el modelo de objeto del documento de la página (DOM). Los componentes son los que tienen la lógica y los datos de la aplicación. Son los que controlan las diferentes plantillas HTML que se cargan cuando se modifican las URLs dentro de la aplicación. Estas plantillas HTML son las vistas que forman la interfaz de usuario.
+Las aplicaciones Angular tienen un componente que es nexo de unión entre los diferentes componentes que forman la aplicación y el modelo de objeto del documento de la página (DOM). Los componentes son los que tienen la lógica y los datos de la aplicación. Son los que controlan las diferentes plantillas HTML que se cargan cuando se modifican las URLs. Estas plantillas HTML son las vistas que forman la interfaz de usuario.
 
 De la misma forma que las aplicaciones diseñadas con Angular pueden tener más de un módulo, también pueden tener subcomponentes, que se pueden relacionar entre sí mediante dos tipos de vinculación de datos, eventos y propiedades. A través de los eventos, la aplicación responde a las entradas del usuario actualizando los datos. A través de las propiedades, se envían valores calculados de los datos de la aplicación a los HTMLs que forman las vistas. Esta vinculación de datos se puede producir en ambas direcciones, es decir, igual que los datos de la aplicación pueden modificar los HTMLs, los cambios en el DOM pueden modificar los datos de la aplicación.
 
@@ -461,7 +461,12 @@ Angular CLI (Command Line Interface) ~\cite{articulobayes} es una herramienta de
 
 También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
 
-\section{MobileNets} 
+\section{TensorFlow} 
+\label{sec:tensorflow}
+
+TensorFlow ~\cite{tensorflow} es un sistema de aprendizaje automático de segunda generación creado por Google Brain y es la herramienta más utilizada en el mundo del Deep Learning. La decisión de liberar TensorFlow se tomó en noviembre de 2015, por lo que hoy es posible acceder a esta herramienta libremente y editarla en función de las necesidades. Esta biblitoeca, es una gran plataforma para construir y entrenar redes neuronales, que permiten detectar y descifrar patrones y correlaciones, similares al aprendizaje o razonamiento que usamos los humanos. 
+
+\subsection{MobileNets} 
 \label{sec:mobilenets}
 
 MobileNets ~\cite{mobilenets} es, además de una librería de TensorFlow la cual vamos a utilizar, una red neuronal convolucional más eficiente ya que se basa en una capa convolucional normal, de la dimensión deseada, pero con un solo filtro. De esta manera, al pasar información por una capa se genera una sola convolución, que esta a su vez sirve como entrada a otra capa de convolución de tamaño fijo de filtro 1x1, con el número de filtros deseados en la convolución a sustituir.
@@ -485,9 +490,9 @@ La fórmula de la probabilidad de una clase C dadas unas características desde 
 En la práctica ~\cite{machinelearning} solo importa el numerador, puesto que el denominador no depende de C y los valores de Fi son datos, por lo que el denominador es constante en la práctica. En el numerador es donde se asume que cada Fi es independiente de cualquier otra Fj (siempre que j es distinta de i) cuando estas dependen de C. Esto significa que haciendo estos supuestos, la probabilidad de C teniendo en cuenta las variables clasificatorias puede expresarse como muestra la imágen ~\ref{fig:ffinalbayes} donde Z es un factor que depende unicamente de F1 \dots Fn, es decir, constante si los valores de Fi son conocidos.
 
 \begin{figure}
-  \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/ffinalbayes}
-  \caption{Fórmula de final de Naive Bayes.}\label{fig:ffinalbayes}
+	\centering
+	\includegraphics[width=9cm, keepaspectratio]{img/ffinalbayes}
+	\caption{Fórmula de final de Naive Bayes.}\label{fig:ffinalbayes}
 \end{figure}
 
 Lo que hace el clasificador finalmente es calcular la probabilidad de cada posible clase con las características de entrada y asgina la entrada a esa clase.
@@ -498,9 +503,9 @@ Lo que hace el clasificador finalmente es calcular la probabilidad de cada posib
 El modelo de K-NN (\emph{k-nearest neighbors}) o \emph{k} vecinos más cercanos ~\cite{knn1} ~\cite{knn2} es un método estadístico de reconocimiento de patrones supervisado. Es un modelo no paramétrico ya que usa directamente los datos de entrenamiento para inferir cada vez la clasificación de una nueva entrada pero sin construir explicitamente un modelo. Lo primero que hace el algorítmo de K-NN es colocar las entradas de entrenamiento en una dimensión de tamaño i, donde i es el número de características. Luego coloca la entrada que queremos clasificar en esta misma dimensión. Después de esto, calcula la distancia a los K puntos más cercanos y en función de la clase de la que tenga más vecinos cerca calsificara la entrada en esa clase. Lo más habitual es seleccionar valores de K pequeños e impares, para evitar los empates. 
 
 \begin{figure}
-  \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/knn}
-  \caption{Clasificador K-NN}\label{fig:knn}
+	\centering
+	\includegraphics[width=9cm, keepaspectratio]{img/knn}
+	\caption{Clasificador K-NN}\label{fig:knn}
 \end{figure}
 
 
@@ -523,17 +528,28 @@ Eso sí, normalmente aconsejo no poner código, sino diagramas.
 \section{Reorganizar LearningML} 
 \label{sec:reorganizar}
 
-Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web, es su estructura, por lo que vamos a ver como funcionaba la de LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por modulos, componentes y servicios. Según estaba construido LearningML, en el módulo principal  \emph{AppModule} se carga el componente  \emph{ml-model.component} 
+Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web, es su estructura, por lo que vamos a ver como funcionaba la de LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por modulos, componentes y servicios. Es importante recordar que antes solo se usaba un algorítmo (redes neuronales) de ahí esta estructura. \\
+Según esta construido LearningML, en el módulo principal \texttt{AppModule} se carga el componente \texttt{ml-model} y el componente \texttt{ml-test-model} uno para construir el modelo y otro para probarlo respectivamente. Estos dos componentes tienen importados a su vez los servicios \texttt{image-classifier} y \texttt{classifier}, uno para crear un modelo de imágenes y otro de texto. El servicio para clasificar texto se llama unicamente \texttt{classfier} porque fue el primero que se incorporó cuando Juanda creo la web y no sabía si se añadirían más en un futuro. \\
+De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manager}, que es una especie de "cajón de sastre" donde se almacenan algunos datos que necesitamos en los otros servicios. Vamos a fijarnos en la figura ~\ref{fig:modeloantiguo} para ver que contiene cada uno de estos servicios.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/modeloantiguo}
+	\caption{Estructura antigua de LearningML}\label{fig:modeloantiguo}
+\end{figure}
+
 
 \begin{itemize}
   
-	\item LabeledDataManager
+	\item Labeled-Data-Manager: Es un servicio que se encarga de guardar los datos en bruto, ya sean imágenes o textos con la función \texttt{addEntry}. También almacena las etiquetas, es decir, las distintas posibles clases a las que puede pertenecer una entrada utilizando la función \texttt{addLabel}. Por último, guarda el tipo de modelo que se quiere construir directamente en la variable \texttt{modelType}. En caso de que carguemos los datos de un JSON, tambíen es aquí donde se realiza tanto la carga como la exportación.
  
-	\item ImageClassifierService
+	\item ImageClassifier: Dentro de este servicio encontramos tres funciones principales, \texttt{extractFeature} que se encarga de transformar las imágenes de entrada en tensores, \texttt{train} que construye el modelo y lo entrena y por último \texttt{classify} que evalua la imagen de entrada de test y la asgina a una de las posibles opciones (etiquetas). Dentro de esta última función tenemos que volver a llamar a \texttt{extractFeature} para que transforme la imágen a tensor y poder analizarla.
 
-	\item ClassifierService
+	\item Classifier: Este servicio lo que hace es transformar las entradas de texto en bruto en vectores, en esta ocasión se utiliza la librería BrainText, que es una adaptación que hizo Juanda de la librería Brain.js \footnote{\url{https://brain.js.org/}}. De nuevo, contiene la función \texttt{train} encargada de crear el modelo y entrenarlo y la función \texttt{run}, que sería el equivalente a la función  \texttt{classify} del punto anterior, es decir, lee el texto introducido, lo trata y lo evalúa y por último determina a cuál de los grupos o etiquetas pertenece.
 
 \end{itemize}
+
+
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
