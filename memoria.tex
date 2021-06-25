@@ -525,17 +525,19 @@ Puedes entrar hasta el detalle.
 Es la parte más importante de la memoria, porque describe lo que has hecho tú.
 Eso sí, normalmente aconsejo no poner código, sino diagramas.
 
-\section{Reorganizar LearningML} 
-\label{sec:reorganizar}
+\section{Arquitectura antigua de LearningML} 
+\label{sec:arquitecturaantigua}
 
 Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web, es su estructura, por lo que vamos a ver como funcionaba la de LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por modulos, componentes y servicios. Es importante recordar que antes solo se usaba un algorítmo (redes neuronales) de ahí esta estructura. \\
 Según esta construido LearningML, en el módulo principal \texttt{AppModule} se carga el componente \texttt{ml-model} y el componente \texttt{ml-test-model} uno para construir el modelo y otro para probarlo respectivamente. Estos dos componentes tienen importados a su vez los servicios \texttt{image-classifier} y \texttt{classifier}, uno para crear un modelo de imágenes y otro de texto. El servicio para clasificar texto se llama unicamente \texttt{classfier} porque fue el primero que se incorporó cuando Juanda creo la web y no sabía si se añadirían más en un futuro. \\
-De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manager}, que es una especie de "cajón de sastre" donde se almacenan algunos datos que necesitamos en los otros servicios. Vamos a fijarnos en la figura ~\ref{fig:modeloantiguo} para ver que contiene cada uno de estos servicios.
+De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manager}, que es una especie de "cajón de sastre" donde se almacenan algunos datos que necesitamos en los otros servicios y componentes. 
+Para la parte de test hay un solo componente llamado \texttt{ml-test-model} que llama a la función \texttt{classify} de \texttt{image-classifier} o a la función  \texttt{run} de \texttt{classifier}, dependiendo de si se estan clasificando imágenes o textos respectivamente.
+Vamos a fijarnos en la figura ~\ref{fig:modeloantiguo} para ver que contiene cada uno de los servicios nombrados anteriormente.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, keepaspectratio]{img/modeloantiguo}
-	\caption{Estructura antigua de LearningML}\label{fig:modeloantiguo}
+	\caption{Estructura antigua de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}\label{fig:modeloantiguo}
 \end{figure}
 
 
@@ -549,6 +551,47 @@ De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manag
 
 \end{itemize}
 
+\section{Arquitectura actual de LearningML} 
+\label{sec:arquitecturaactual}
+
+Como hemos visto en la sección anterior, tenemos tanto la extracción de características (el proceso de convertir los datos en bruto en un vector que pasar como entrada al constructor del modelo) como la construcción del modelo en el mismo servicio. La idea que tenemos en mente es que por un lado se extraigan las características y por otro lado se genere el modelo independientemente de si estamos clasificando imágenes o texto, ya que al constructor del modelo le entrara un vector sin importar si se ha construido de una forma u otra.\\
+Ahora el componente \texttt{ml-model} importa los servicios de \texttt{feature-extraction} y \texttt{ml-algorithm}. Dentro de estos dos servicios, se importan a su vez en el primero \texttt{feature-extractor-image} y \texttt{feature-extractor-text} y en el segundo \texttt{ml-algorithm-image} y \texttt{ml-algorithm-text}.
+En el componente \texttt{ml-model} existe la función \texttt{train}, la cual existia también antes pero llamaba directamente a uno de los dos antiguos servicios, ahora llama a \texttt{feature-extraction} y es este quién elige que servicio usar para extraer el vector dependiendo del tipo de dato. Después llama a \texttt{ml-algorithm} y este servicio decide que algorítmo utilizar para construir el modelo.\\
+En la parte de prueba se ha dividido el componente \texttt{ml-test-model} en dos \texttt{ml-test-image} y \texttt{ml-test-text} para imágenes y texto respectivamente. El componente \texttt{ml-test-image} contiene la función \texttt{takeSnapshot} (en caso de que la imagen de prueba sea una foto a través de la cámara) y la función \texttt{onLoaded} (en caso de que la imagen sea un archivo ya existente), en ambos casos, se llama primero a \texttt{feature-extraction} y después a \texttt{ml-algorithm}. En el caso del texto funciona de la misma manera pero solo podemos introducir texto por teclado.\\
+El servicio de \texttt{labeled-data-manager} sigue siendo transversal a todos los servicios y componentes, con el único añadido de que ahora guardamos el tipo de algorítmo que vamos a utilizar en la variable \texttt{mlAlgorithm}.
+Esta estructura simplifica mucho las cosas y hace que el código sea más fácil de entender y de modificar en caso de que algún día haya que añadir nuevos tipos de datos o nuevos tipos de algorítmos. Hace que las funciones y en general el código sean similares para distintos tipo de datos, además, separa los dos problemas por completo haciendolos totalmente independientes uno de otro. De nuevo, vamos a ver la figura ~\ref{fig:modelonuevo} para entenderlo mejor.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/modelonuevo}
+	\caption{Estructura nueva de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}\label{fig:modelonuevo}
+\end{figure}
+
+\begin{itemize}
+  
+	\item Labeled-Data-Manager: Este servicio como ya se ha comentado sigue siendo utilizado en todo el resto de servicios y componentes, con la diferencia de que ahora, además de los datos de etiquetas, datos en bruto de las entradas y tipo de modelo que ya guardaba antes, guarda también el tipo de algortimo en la variable \texttt{mlAlgorithm}.
+ 
+	\item Feature-Extraction: En este servicio encontramos la función de \texttt{extractDatasetFeatures} que es la encargada de llamar a los otros dos servicios dependiendo de si se quieren extrar características de una imagen o de un texto.
+\begin{itemize}
+  
+	\item Feature-Extractor-Image: Se encarga de extraer las características de las imágenes, es decir, de convertir la imagen en bruto a un tensor. La función que realmente hace esto de obtener el tensor dada una imagen es \texttt{extractInstanceFeatures}. Aunque tiene más funciones para por ejemplo construir un mapa con la etiqueta que corresponde a cada imagen.
+
+	\item Feature-Extractor-Text: Se encarga de extraer las características de los textos, por tanto, con un texto como entrada obtenemos un tensor. De nuevo, para que la arquitectura tenga una estructura coherente, la función recibe el nombre de \texttt{extractInstanceFeatures}. 
+\end{itemize}
+
+	\item ml-Algorithm: Este servicio cuenta con dos funciones principales. \texttt{train} encargada de elegir a que sub-servicio llamar dependiendo del algorítmo que se quiere utilizar. Y la función \texttt{classify} que de nuevo, elige que sub-servicio utilizar en funcion del algorítmo.
+\begin{itemize}
+  
+	\item ml-Algorithm-knn: Cuenta con dos funciones que son las que llama el servicio que esta por encima para entrenar (\texttt{train}) o evaluar  (\texttt{classify}) una entrada en el caso de que el algorítmo elegido por el usuario sea K-NN.
+
+	\item ml-Algorithm-bayes: Cuenta con las mismas funciones que K-NN pero en este caso construye o evalua un clasificador utilizando el algorítmo de Naive Bayes.
+\end{itemize}
+
+
+\end{itemize}
+
+Finalmente, recalcalcar que esta estructura si se utiliza correctamente permite añadir un nuevo tipo de dato o de clasificador únicamente creando los nuevos servicios. Debemos tener en cuenta que estos nuevos servicios para que encajen con lo que ya hay deben tener al menos las mismas funciones que los ya existentes, ya que son a las que llaman los servicios superiores. De esta manera, sin apenas tocar los servicios superiores (solo habría que añadir en el punto donde se elije el tipo de dato a extraer o el tipo de modelo, la opción de elegir lo nuevo que hayamos creado) podemos implementar nuevas funcionalidades en un futuro de manera más limpia y sencilla.
+
 
 
 \section{Arquitectura general} 
@@ -556,26 +599,6 @@ De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manag
 
 Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
 
-Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
-\LaTeX \ pone las figuras donde mejor cuadran. 
-
-A veces queda un poco raro, pero es la filosofía de \LaTeX: tú al contenido, que yo me encargo de la maquetación.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura.png}
-  \caption{Estructura del parser básico.}\label{fig:arquitectura}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}\label{fig:_arquitectura}
-\end{figure}
-
- 
-Recuerda que toda figura que añadas a tu memoria debe ser explicada.
-Sí, aunque te parezca evidente lo que se ve en la figura~\ref{fig:arquitectura}, la figura en sí solamente es un apoyo a tu texto.
 
 
 \section{Crear el clasificador de Naive Bayes} 
