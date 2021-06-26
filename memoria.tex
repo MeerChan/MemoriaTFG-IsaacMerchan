@@ -529,25 +529,25 @@ Eso sí, normalmente aconsejo no poner código, sino diagramas.
 \label{sec:arquitecturaantigua}
 
 Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web, es su estructura, por lo que vamos a ver como funcionaba la de LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por modulos, componentes y servicios. Es importante recordar que antes solo se usaba un algorítmo (redes neuronales) de ahí esta estructura. \\
-Según esta construido LearningML, en el módulo principal \texttt{AppModule} se carga el componente \texttt{ml-model} y el componente \texttt{ml-test-model} uno para construir el modelo y otro para probarlo respectivamente. Estos dos componentes tienen importados a su vez los servicios \texttt{image-classifier} y \texttt{classifier}, uno para crear un modelo de imágenes y otro de texto. El servicio para clasificar texto se llama unicamente \texttt{classfier} porque fue el primero que se incorporó cuando Juanda creo la web y no sabía si se añadirían más en un futuro. \\
-De manera transversal a todo esto tenemos el servicio \texttt{labeled-data-manager}, que es una especie de "cajón de sastre" donde se almacenan algunos datos que necesitamos en los otros servicios y componentes. 
-Para la parte de test hay un solo componente llamado \texttt{ml-test-model} que llama a la función \texttt{classify} de \texttt{image-classifier} o a la función  \texttt{run} de \texttt{classifier}, dependiendo de si se estan clasificando imágenes o textos respectivamente.
-Vamos a fijarnos en la figura ~\ref{fig:modeloantiguo} para ver que contiene cada uno de los servicios nombrados anteriormente.
+Según estaba construido LearningML, en el módulo principal \texttt{AppModule} se cargaba el componente \texttt{ml-model} y el componente \texttt{ml-test-model} uno para construir el modelo y otro para probarlo respectivamente. Estos dos componentes tenían importados a su vez los servicios \texttt{image-classifier} y \texttt{classifier}, uno para crear un modelo de imágenes y otro de texto. El servicio para clasificar texto se llamaba unicamente \texttt{classfier} porque fue el primero que se incorporó cuando Juanda creo la web y no sabía si se añadirían más en un futuro. \\
+De manera transversal a todo esto teníamos el servicio \texttt{labeled-data-manager}, que era una especie de "cajón de sastre" donde se almacenan algunos datos que necesitabamos en los otros servicios y componentes. 
+Para la parte de test había un solo componente llamado \texttt{ml-test-model} que llamaba a la función \texttt{classify} de \texttt{image-classifier} o a la función  \texttt{run} de \texttt{classifier}, dependiendo de si se estaban clasificando imágenes o textos respectivamente.
+Vamos a fijarnos en la figura ~\ref{fig:modeloantiguo} para ver que contenía cada uno de los servicios nombrados anteriormente.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, keepaspectratio]{img/modeloantiguo}
-	\caption{Estructura antigua de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}\label{fig:modeloantiguo}
+	\caption{Estructura antigua de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}				\label{fig:modeloantiguo}
 \end{figure}
 
 
 \begin{itemize}
   
-	\item Labeled-Data-Manager: Es un servicio que se encarga de guardar los datos en bruto, ya sean imágenes o textos con la función \texttt{addEntry}. También almacena las etiquetas, es decir, las distintas posibles clases a las que puede pertenecer una entrada utilizando la función \texttt{addLabel}. Por último, guarda el tipo de modelo que se quiere construir directamente en la variable \texttt{modelType}. En caso de que carguemos los datos de un JSON, tambíen es aquí donde se realiza tanto la carga como la exportación.
+	\item Labeled-Data-Manager: Era un servicio que se encargaba de guardar los datos en bruto, ya fueran imágenes o textos con la función \texttt{addEntry}. También almacenaba las etiquetas, es decir, las distintas posibles clases a las que podía pertenecer una entrada utilizando la función \texttt{addLabel}. Por último, guardaba el tipo de modelo que se quería construir directamente en la variable \texttt{modelType}. En caso de que cargasemos los datos de un JSON, tambíen es aquí donde se realizaba tanto la carga como la exportación.
  
-	\item ImageClassifier: Dentro de este servicio encontramos tres funciones principales, \texttt{extractFeature} que se encarga de transformar las imágenes de entrada en tensores, \texttt{train} que construye el modelo y lo entrena y por último \texttt{classify} que evalua la imagen de entrada de test y la asgina a una de las posibles opciones (etiquetas). Dentro de esta última función tenemos que volver a llamar a \texttt{extractFeature} para que transforme la imágen a tensor y poder analizarla.
+	\item ImageClassifier: Dentro de este servicio encontrabamos tres funciones principales, \texttt{extractFeature} que se encargaban de transformar las imágenes de entrada en tensores, \texttt{train} que construían el modelo y lo entrenaban y por último \texttt{classify} que evaluaba la imagen de entrada de test y la asginaba a una de las posibles opciones (etiquetas). Dentro de esta última función teníamos que volver a llamar a \texttt{extractFeature} para que transformase la imágen a tensor y poder analizarla.
 
-	\item Classifier: Este servicio lo que hace es transformar las entradas de texto en bruto en vectores, en esta ocasión se utiliza la librería BrainText, que es una adaptación que hizo Juanda de la librería Brain.js \footnote{\url{https://brain.js.org/}}. De nuevo, contiene la función \texttt{train} encargada de crear el modelo y entrenarlo y la función \texttt{run}, que sería el equivalente a la función  \texttt{classify} del punto anterior, es decir, lee el texto introducido, lo trata y lo evalúa y por último determina a cuál de los grupos o etiquetas pertenece.
+	\item Classifier: Este servicio lo que hacía era transformar las entradas de texto en bruto en vectores, en esta ocasión se utilizaba la librería BrainText, que es una adaptación que hizo Juanda de la librería Brain.js \footnote{\url{https://brain.js.org/}}. De nuevo, contenía la función \texttt{train} encargada de crear el modelo y entrenarlo y la función \texttt{run}, que sería el equivalente a la función  \texttt{classify} del punto anterior, es decir, leía el texto introducido, lo trataba y lo evaluaba y por último determinaba a cuál de los grupos o etiquetas pertenecía.
 
 \end{itemize}
 
@@ -564,7 +564,7 @@ Esta estructura simplifica mucho las cosas y hace que el código sea más fácil
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, keepaspectratio]{img/modelonuevo}
-	\caption{Estructura nueva de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}\label{fig:modelonuevo}
+	\caption{Estructura nueva de LearningML. En azul los componentes, en naranja los servicios, en verde las funciones y en morado las variables.}					\label{fig:modelonuevo}
 \end{figure}
 
 \begin{itemize}
@@ -594,22 +594,61 @@ Finalmente, recalcalcar que esta estructura si se utiliza correctamente permite 
 
 
 
-\section{Arquitectura general} 
-\label{sec:arquitectura}
+\section{Adaptar la interfaz} 
+\label{sec:interfaz}
 
-Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
+En este caso, lo primero que se hizo fue añadir en la interfaz gráfica la opción de que el usuario pudiera elegir que tipo de algortimo utilizar, Naive Bayes, K-NN o redes neuronales. Para ello hay que modificar el archivo \texttt{ml-model.component.html} como se puede ver en la imagen ~\ref{fig:desplegable} añadiendo un desplegable \texttt{select} con las tres opciones que tenemos ahora. Como podemos ver en la primera línea, este desplegable solo aparecerá en caso de que tengamos activado el LearningML avanzado, si no tenemos este modo activado no nos dejará elegir el tipo de modelo y utilizará redes neuronales.\\
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/desplegable}
+	\caption{Parte de código encargada de crear el desplegable que muestra los tipos de modelo que puede elegir el usuario}									\label{fig:desplegable}
+\end{figure}
+
+Dependiendo de la opción que elijamos en el desplegable nos dejará modificar unos parámetros u otros, en el caso de K-NN nos deja elegir el número de vecinos que queremos tener en cuenta a la hora de clasificar, es decir, el valor de \emph{K}. Esto se hace en el mismo archivo en la parte que se muestra en la imagen ~\ref{fig:nvecinosknn}. En la primera linea se comprueba si el algoritmo es K-NN para ver si se muestra esto o no y en la tercera otorgamos el valor mínimo y máximo del deslizable así como el intervalo entre un valor y otro, en este caso uno. También recogemos su valor en \texttt{params.knn.k} para después poder utilizarlo.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/nvecinosknn}
+	\caption{Parte de código encargada de recoger el valor de K en el algoritmo KNN}				
+        \label{fig:nvecinosknn}
+\end{figure}
+
+
+\section{Crear el clasificador de K-NN} 
+\label{sec:knn}
+
+Para crear el clasficador de K-NN lo primero es tener claro como funciona para así poder pasarlo a lenguaje de programación. Vamos a verlo con un ejemplo en  la imagen ~\ref{fig:ejemploknn} podemos ver que tenemos tres grupos, lo que para nosotros serán las etiquetas y dos características, la altura y el peso, que en nuestro caso serán 1024. También necesitamos tener claro como vienen los datos de entrada y como podemos trabajar con ellos. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/ejemploknn}
+	\caption{Creación del modelo de K-NN}				
+	\label{fig:ejemploknn}
+\end{figure}
 
 
 
 \section{Crear el clasificador de Naive Bayes} 
 \label{sec:naivebayes}
 
+De nuevo, vamos a ver un ejemplo para tener presente que es lo que tenemos que hacer e ir equiparandolo a los datos del ejemplo con los datos que tenemos y los que queremos conseguir. Veamos el ejemplo que se muestra en el libro de S. Marsland ~\cite{machinelearning}. Tenemos una seríe de datos con su salida correspondiente (ver tabla ~\ref{fig:tablabayes}) en este caso tendríamos tres características si hay entregas de ejercicios pendientes, si hay una fiesta y si la persona se siente vaga o no ese día, dependiendo de esto podrá hacer cuatro actividades distintas, salir de fiesta, estudiar, irse al bar o ver la televisión. Para nosotros, las características, de nuevo son 1024 y las actividades posibles serían nuestras etiquetas. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/tablabayes}
+	\caption{Tabla con los datos de ejemplo de Naive Bayes.}			
+	\label{fig:tablabayes}
+\end{figure}
 
-\section{Crear el clasificador de K-NN} 
-\label{sec:knn}
+Lo que hay que hacer es cálcular la posibilidad de las cuatro posibles salidas dadas esas entradas y elegir la de mayor valor. Eso se hace de con los cálculos que se muestran en la imágen ~\ref{fig:probabilidadbayes}
 
-
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/probabilidadbayes}
+	\caption{Cálculo de probabilidad de cada salida en Naive Bayes.}			
+	\label{fig:probabilidadbayes}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
