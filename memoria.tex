@@ -614,11 +614,56 @@ Dependiendo de la opción que elijamos en el desplegable nos dejará modificar u
         \label{fig:nvecinosknn}
 \end{figure}
 
+\section{Datos de entrada} 
+\label{sec:datosdeentrada}
+
+A la hora de crear un nuevo servicio, tenemos que tener claro como vienen los datos de entrada y como podemos trabajar con ellos. Como ya hemos comentado antes, en el servicio \texttt{feature-extraction} se llama al servicio correspondiente para extraer las entradas del clasificador a partir de los datos en bruto. Estos datos en bruto tienen el aspecto que vemos en la imagen ~\ref{fig:datosenbruto}. Como vemos consta de tres pares de datos clave-valor, uno por cada etiqueta y las entradas que pertencen a ella.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/datosenbruto}
+	\caption{Datos de entrada sin tratar}				
+	\label{fig:datosenbruto}
+\end{figure}
+
+Ahora vamos a ver en que se transforman estos para ver que tipo de datos va a recibir nuestro clasificador. La función \texttt{train} de nuestro clasificador que se llamará en el servicio \texttt{ml-algorithm} tendrá como entrada \texttt{features}. Este objeto se compone de tres items:
+
+\begin{itemize}
+  
+	\item \texttt{text\_labels}: Es simplemente un array con los nombres de las etiquetas, para después poder equiparar los datos del tensor con la realidad. En la figura ~\ref{fig:textlabels} tenemos la estructura del dato.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/textlabels}
+	\caption{Estructura de text\_labels}				
+	\label{fig:textlabels}
+\end{figure}
+
+	\item \texttt{tensor\_labels}: Es un tensor en el que se guardan las etiquetas codificadas como tres numeros. En este caso que tenemos en total 38 entradas y tres etiquetas, tendrá 38 arrays de tamaño tres. Cuando el array tenga valor [1,0,0] significará que esa entrada pertenece a la primera etiqueta, en el caso de que tome el valor [0,1,0] pertenecerá a la segunda etiqueta y por último, si toma el valor [0,0,1] será de la tercera etiqueta. Podemos ver el aspecto de este dato en la imagen ~\ref{fig:tensorlabels}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/tensorlabels}
+	\caption{Estructura de tensor\_labels}				
+	\label{fig:tensorlabels}
+\end{figure}
+	
+	\item \texttt{tensor\_inputs}: Es un tensor en el que se encuentran las caractrísticas de cada entrada, en el caso de las imágenes que es lo que vamos a tratar en el ejemplo, utilizamos 1024 caractrísticas y tenemos 38 entradas. Cada entrada por tanto tendrá un vector de 1024 posiciones y cada posición tendrá el valor de una característica. La estructura de este dato la podemos ver en la imágen ~\ref{fig:tensorinputs}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/tensorinputs}
+	\caption{Estructura de tensor\_inputs}				
+	\label{fig:tensorinputs}
+\end{figure}
+
+
+\end{itemize}
 
 \section{Crear el clasificador de K-NN} 
 \label{sec:knn}
 
-Para crear el clasficador de K-NN lo primero es tener claro como funciona para así poder pasarlo a lenguaje de programación. Vamos a verlo con un ejemplo en  la imagen ~\ref{fig:ejemploknn} podemos ver que tenemos tres grupos, lo que para nosotros serán las etiquetas y dos características, la altura y el peso, que en nuestro caso serán 1024. También necesitamos tener claro como vienen los datos de entrada y como podemos trabajar con ellos. 
+Para crear el clasficador de K-NN lo primero es tener claro como funciona para así poder pasarlo a lenguaje de programación. Vamos a verlo con un ejemplo, en  la imagen ~\ref{fig:ejemploknn} podemos ver que tenemos tres grupos, lo que para nosotros serán las etiquetas y dos características, la altura y el peso, que en nuestro caso serán 1024. 
 
 \begin{figure}
 	\centering
@@ -628,11 +673,40 @@ Para crear el clasficador de K-NN lo primero es tener claro como funciona para a
 \end{figure}
 
 
+\subsection{Función Train} 
+\label{sec:funciontrainknn}
+
+Tanto esta función como la siguiente se pueden encontrar en el archivo \textbackslash learningml-editor-develop\textbackslash src\textbackslash app\textbackslash services\textbackslash mlAlgorithms\textbackslash ml-algorithm-knn.ts.\\
+Por como funciona la biblioteca que vamos a utilizar de TensorFlow, necesitamos en primer lugar construir el modelo con la función  \texttt{knnclassifier.create()} (previamente hemos importado la libreria como knnClassifier). Lo que hará este objeto será ir situando las entradas como los puntos que hemos visto en el ejemplo, pero en este caso la dimensión será 1024. Este modelo funciona de tal forma que tenemos que ir añadiendo entradas de entrenamiento con la funcion \texttt{.addExample()}. Esta función tiene que recibir dos parametros, por un lado debe tener las caracteristicas de una entrada en un tensor y por otro la etiqueta a la que pertenece indicada como un número. Podemos ver las estructuras de entrada en la imagen ~\ref{fig:entradasclasificadorknn}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/entradasclasificadorknn}
+	\caption{Estructura de los datos de entrada al clasificador de K-NN}				
+	\label{fig:entradasclasificadorknn}
+\end{figure}
+
+Vamos a ver como conseguir este tipo de dato para cada caso:
+
+\begin{itemize}
+	\item Características: En este caso es sencillo, ya que solamente tenemos que deshacer el vector que tenemos en \texttt{tensor\_inputs} y obtener un vector por cada característica. TensorFlow cuenta con la función \texttt{unstack} que hace precisamente eso.
+\begin{verbatim}
+let inputs = tf.unstack(features.tensor_inputs);
+\end{verbatim}	
+	\item Etiquetas: Para obtener esta variable primero tenemos de nuevo que deshacer el vector de etiquetas \texttt{tensor\_labels} en un tensor para cada entrada (estos tensores se guardan en la variable \texttt{\_labels}. Después de esto tenemos que remplazar el array de tres posiciones que teniamos por un solo número, de eso se encarga la función auxiliar  \texttt{getClassIndex} que obtiene para cada array su numero correspondiente, en este caso al array [1,0,0] le corresponderá el valor 0, al array [0,1,0] el valor 1 y al array [0,0,1] el valor 2. Este formato de etiquetas final se guarda en la variable \texttt{labels}.
+\end{itemize}
+
+Por último, queda construir un bucle que vaya añadiendo todos los ejemplos, es decir que recorra las posiciones de los dos arrays que tenemos pasandoselas como argumentos a la función \texttt{addExample} que tiene el modelo (objeto) que hemos creado al principio.
+
+\subsection{Función Classify} 
+\label{sec:funcionclassifyknn}
+
+Una vez hemos construido y entrenado el modelo, queda crear la función para que clasifique una entrada dada. En este paso colocara la entrada en el espacio de dimensión 1024 con el resto de ejemplos ya colocados y verá cuales son los K vecinos más cercanos, después de esto clasificará nuestra entrada como la etiqueta de la cual tenga más vecinos cercanos, es decir, si nos fijamos en los tres vecinos más cercanos y dos son del tipo "adulto" y uno del tipo "niño" clasificará la entrada como adulto. En este caso tenemos la función \texttt{.predictClass} a la cual le tenemos que pasar un tensor con las características de la entrada y el valor del parametro K. En este caso es inmediato, ya que ambas variables las tenemos, sin embargo, esta función devuelve una probabilidad para cada etiqueta, que si recordamos, ahora valen 0, 1 o 2. Debido a esto, tenemos que recorrer el array que nos ha devuelto con las probabilidades ordenadas, es decir, el primer dato corresponde a la primera etiqueta asignando a cada nombre de etiqueta (recordar que lo guardabamos en \texttt{text\_labels}) su probabilidad. Estos datos se guardan en la variable \texttt{results} que tiene el aspecto que podemos ver en la imagen ~\ref{fig:resultsknn}, es un array en el que cada elemento es otro array en el cual la primera posición es el nombre de la etiqueta y la segunda la probabilidad de la misma. Por último, ordenamos la variable antes de devolverla al servicio superior donde se llama a esta función (\texttt{ml-algorithm}).
 
 \section{Crear el clasificador de Naive Bayes} 
 \label{sec:naivebayes}
 
-De nuevo, vamos a ver un ejemplo para tener presente que es lo que tenemos que hacer e ir equiparandolo a los datos del ejemplo con los datos que tenemos y los que queremos conseguir. Veamos el ejemplo que se muestra en el libro de S. Marsland ~\cite{machinelearning}. Tenemos una seríe de datos con su salida correspondiente (ver tabla ~\ref{fig:tablabayes}) en este caso tendríamos tres características si hay entregas de ejercicios pendientes, si hay una fiesta y si la persona se siente vaga o no ese día, dependiendo de esto podrá hacer cuatro actividades distintas, salir de fiesta, estudiar, irse al bar o ver la televisión. Para nosotros, las características, de nuevo son 1024 y las actividades posibles serían nuestras etiquetas. 
+De nuevo, vamos a ver un ejemplo para tener presente que es lo que tenemos que hacer e ir equiparandolo a los datos del ejemplo con los datos que tenemos y los que queremos conseguir. Veamos el ejemplo que se muestra en el libro de S. Marsland ~\cite{machinelearning}. Tenemos una seríe de datos con su salida correspondiente (ver tabla ~\ref{fig:tablabayes}) en este caso tendríamos tres características: si hay entregas de ejercicios pendientes, si hay una fiesta y si la persona se siente vaga o no ese día. Dependiendo de esto podrá hacer cuatro actividades distintas, salir de fiesta, estudiar, irse al bar o ver la televisión. Para nosotros, las características, son 1024 y las actividades posibles serían nuestras etiquetas. 
 
 \begin{figure}
 	\centering
@@ -650,6 +724,13 @@ Lo que hay que hacer es cálcular la posibilidad de las cuatro posibles salidas 
 	\label{fig:probabilidadbayes}
 \end{figure}
 
+
+\subsection{Función Train} 
+\label{sec:funciontrainbayes}
+
+\subsection{Función Classify} 
+\label{sec:funcionclassifybayes}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXPERIMENTOS Y VALIDACIÓN %
@@ -658,15 +739,79 @@ Lo que hay que hacer es cálcular la posibilidad de las cuatro posibles salidas 
 \cleardoublepage
 \chapter{Experimentos y validación}
 
+En esta sección vamos a realizar algunas comprobaciones para ver si los clasificadores construidos funcionan correctamente o no. Para comprobar el funcionamiento del clasificador, en ambos casos (K-NN y Naive Bayes), cabe destacar que cuanto mayor sea el conjunto de entrenamiento mejor serán los resultados.
 Este capítulo se introdujo como requisito en 2019. 
 Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
 Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos. 
 
+\section{Prueba del clasificador de K-NN} 
+\label{sec:pruebaknn}
+
+Hemos creado un modelo con tres clases (cara, mano y puño) y en el que para cada clase hemos añadido 11, 12 y 15 fotos respectivamente, aunque lo ideal sería añadir el mismo número de fotos en cada etiqueta de esta manera podemos ver su funcionamiento cuando la situación no es óptima. En la figura ~\ref{fig:fotosentrada} podemos ver las entradas. Después de esto, elejimos el clasificador de K-NN y el número de vecinos a tener en cuenta para la clasificación (valor del parametro K) y pulsamos el botón de aprender a reconocer imágenes.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/fotosentrada}
+	\caption{Elementos de entrada para el entrenamiento del clasificador.}			
+	\label{fig:fotosentrada}
+\end{figure}
+
+Ahora en la sección de la derecha vamos a hacer (o seleccionar del ordenador) una foto para que la clasifique el modelo. Vamos a comenzar primero con utilizar una entrada de la clase cara y ver que clase se le asigna. Figura ~\ref{fig:testcaraknn}. Como podemos ver debajo de la imagen nos muestra el porcentaje de que la entrada evaluada pertenezca a una clase u otra, en este caso ha acertado completamente ya que nos indica un 100\% en la etiqueta cara. Se han hecho varias comprobaciones más con imágenes de la clase cara y funciona correctamente.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/testcaraknn}
+	\caption{Imagen de test de la clase cara para el clasificador KNN.}			
+	\label{fig:testcaraknn}
+\end{figure}
+
+Vamos ahora a comprobar que ocurre si introducimos la imagen de una mano. Figura ~\ref{fig:testmanoknnbien}. En este caso si asigna correctamente la imagen a la etiqueta que le corresponde, sin embargo, probando algunaas veces más (Figura ~\ref{fig:testmanoknnmal}) nos damos cuenta de que, aunque si se clasifique bien la imagen ya que el mayor porcentaje sigue siendo de la clase mano, comienza a tener algun porcentaje del tipo puño. Estos porcentajes, van a ser siempre múltiplos de 20 debido a que hemos elegido un parámetro K con valor 5, por lo que tendrá 1, 2, 3, 4 o 5 vecinos de una clase que se corresponderan con un 20, un 40, un 60, un 80 o un 100 por cien respectivamente. Teniendo esto en cuenta, en el caso de la imagen  ~\ref{fig:testmanoknnmal} que tiene un 60 \% de mano, querrá decir que 3 de los 5 vecinos mas cercanos son de la clase mano y los otros 2 (40\%) son de la clase puño. Podemos obserar, que pese a ser imágenes en las que puede haber algo más de confusión, sigue funcionando correctamente ya que el mayor porcentaje sigue siendo de la etiqueta correcta.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/testmanoknnbien}
+	\caption{Imagen de test de la clase mano para el clasificador KNN (1).}			
+	\label{fig:testmanoknnbien}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/testmanoknnmal}
+	\caption{Imagen de test de la clase mano para el clasificador KNN (2).}			
+	\label{fig:testmanoknnmal}
+\end{figure}
+
+Por último queda evaluar la clase puño. De nuevo ocure como con la clase mano, en algunos casos nos devuelve un porcentaje del 100 \% para la clase correcta (Figura ~\ref{fig:testpunoknnbien}) y en otros tiene cierto porcentaje de la clase mano (Figura ~\ref{fig:testpunoknnmal}). En este caso podemos ver que tiene un 80 \% en la etiqueta puño (4 de los vecinos mas cercanos son de la clase puño) y un 20 \& de la etiqueta mano (1 de los 5 vecinos más cercanos pertenece a la clase mano). A pesar de esto, podemos decir que funciona correctamente ya que el mayor porcentaje es para la clase correcta.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/testpunoknnbien}
+	\caption{Imagen de test de la clase puño para el clasificador KNN (1).}			
+	\label{fig:testmanoknnbien}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, keepaspectratio]{img/testpunoknnmal}
+	\caption{Imagen de test de la clase puño para el clasificador KNN (2).}			
+	\label{fig:testpunoknnmal}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Prueba del clasificador de Naive Bayes} 
 \label{sec:pruebabayes}
 
-\section{Prueba del clasificador de K-NN} 
-\label{sec:pruebaknn}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
