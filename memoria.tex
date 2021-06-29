@@ -365,7 +365,7 @@ Node.js está pensado para soportar grandes cantidades de solicitudes muy altas 
 JSON (JavaScript Object Notation - Notación de Objetos de JavaScript) es un formato de intercambio de datos ~\cite{json}. Es sencillo tanto de escribir como de leer, lo que facilita que tanto los humanos como las máquinas sean capaces de utilizarlos y generarlos. Aunque esta basdo en un subconjunto del lenguaje de programación Javascript, es un formato de texto completamente independiente del lenguaje.
 
 En el siguiente texto en formato JSON, podemos ver las dos estructuras que nos ofrece, una colección de pares de nombre/valor y una lista de valores. En el ejemplo, vemos que el tipo de clasificador será de texto en este caso y que dentro de los datos tendremos dos etiquetas, una de vocales con una lista de las entradas que pertenecen a esta etiqueta y otra de consonantes. 
-{\footnotesize
+
 \begin{verbatim}
 {
     "type": "text",
@@ -383,7 +383,7 @@ En el siguiente texto en formato JSON, podemos ver las dos estructuras que nos o
     }
 }
 \end{verbatim}
-}
+
 
 \section{Angular} 
 \label{sec:angular}
@@ -835,17 +835,19 @@ Por último queda evaluar la clase puño. De nuevo ocure como con la clase mano,
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
+Creo que el resultado del trabajo ha sido bueno, teniendo en cuenta que quizás si hubiera tenido algo más de tiempo se podrían haber implementado algunas funciones más, las dos que más me llamaban la atención han quedado implementadas de manera correcta. De manera transversal a esto nos dimos cuenta de que teniamos que reestructurar la web.
 
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+Si volvemos a los objetivos marcados para este proyecto, uno de los objetivos principales era reorganizar LearningML, esto se ha conseguido ya que se ha restructurado la web en cuanto a componentes y servicios se refiere, ha quedado con una estructura mucho mas limpia y fácil de mantener y ampliar para que en un futuro sea más sencillo implementar mejoras.
 
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+En cuanto al algortimo de K-NN ha sido algo más fácil de implementar debido a que contabamos con la bilblitoeca de TensorFlow. Sin embargo, hubo que tratar los datos de entrada ya que por como se extraen las caracteristicas no podiamos utilizarlos directamente, ya que en un primer lugar estaban pensados para el algortimo de redes neuronales.
 
-Y si has llegado hasta aquí, siempre es bueno pasarle el corrector ortográfico, que las erratas quedan fatal en la memoria final.
-Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde la línea de \emph{shell}:
+BAYES
+
+
+
 
 \begin{verbatim}
   aspell --lang=es_ES -c memoria.tex
@@ -854,31 +856,39 @@ Para eso, en Linux tenemos aspell, que se ejecuta de la siguiente manera desde l
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
+En la realizacion de este proyecto he podido poner en práctica mis conocimientos adquirídos durante el grado sobre todo en cuestiones de modelos de aprendizaje, HTML, algo de CSS y JavaScript. Las demas asignaturas relacionadas con la programación también me han sido útiles de auqnue se traten de lenguajes y tecnologías diferentes aportan conocimientos sobre el funcionamiento y la forma de desarrollar una aplicación. En general todas las asignaturas de programación me han sido útiles, tanto Informatica I como Informatica II o Protocolos de transmisión de audio y video aunque no haya usado esos lenguajes como tal. Lo mismo ocurre con Construcción de servicios y aplicaciones audiovisuales en internet o Laboratorio de tecnologías audiovisuales en la web donde se trabaja con Javascript y algo de Node.js lo cual me ha servido como base para utilizar Typescript y el propio Node.js.
+Destacar también que me llamó la atención el implementar estos dos algoritmos de K-NN y Naive Bayes porque ambos los habíamos visto en la asignatura de Tratamiendo digital de la imagen y ya conocía su funcionamiento.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado.
+Con las mejoras añadidas en la web de LearningML he conseguido ampliar y mejorar los conocimientos adquiridos durante la carrera ademas de aprender otros totalmente nuevos. Entre ellos cabe destacar el aprendizaje de nuevas tecnologías que no había visto antes como por ejemplo:
 
 \begin{enumerate}
-  \item dd
-  \item Aquí viene otro.
+  \item Angular: Aunque al principio tuve que dedicar bastante tiempo a entender como funcionaba, una vez lo comprendes todo te das cuenta de que facilita mucho el desarrollo y la programación. Es una herramienta muy potente que permite organizar una aplicación de cierto tamaño de manera mas o menos sencilla, separando la parte del funcionamiento interno de la interfaz y a su vez permite pasar variables de una parte a otra. Es algo que si en un futuro intento crear una web de algún tipo lo tendré en cuenta.
+
+  \item Typescript: No me costó mucho adaptarme a este lenguaje y ahora que lo sé utilizar, diría que es más fácil entender como funciona un código en este lenguaje que en JavaScript.
+
+  \item Node.js: Aunque es un concepto que en sí no es complicado de entender, a la hora de utilizarla es algo más complejo y que tuve que pelearme bastante con ello hasta comprender su funcionamiento por completo y poder utilizarla.
 \end{enumerate}
 
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+Como ya se ha comentado en algun apartado anterior, las mejoras que se pueden añadir a la web de LearningML son prácticamente infinitas. Vamos a ver algunas de ellas: 
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+\begin{itemize}
+  	\item  Implementar nuevos tipos de datos de entrada como podría ser el sonido para así poder clasificar archivos de audio o grabaciones. Debido a la reestructuración que se ha llevado a cabo, "solo" habría que crear el archivo \texttt{feature-extractor-audio} y hacerlo de tal manera que las salidas tengan la misma estructura que ya tienen los otros dos archivos de extracción de características.
+
+	\item Incluir otros modelos de aprendizaje como por ejemplo las máquinas de vectores de soporte. \footnote{\url{https://www.cienciadedatos.net/documentos/34_maquinas_de_vector_soporte_support_vector_machines}}
+
+	\item Se podrían añadir como datos de entrada tablas de números directamente, que es algo muy intersante ya que hay modelos construidos en internet como por ejemplo el \emph{conjunto de datos iris}\footnote{\url{https://es.wikipedia.org/wiki/Conjunto_de_datos_flor_iris}} y se podrían cargar directamente o simplemente dejar que el usuario escriba a mano el valor númerico de las características que desee. 
+
+	\item También queda por hacer la parte de relacionar los dos nuevos algoritmos implementados con Scratch, para poder crear el modelo desde ahí y después cargarlo en la propia web. 
+
+	\item Otra idea seria podría modificar el diseño o añadir algun botón de información en el que se explique de manera sencilla como funciona cada algorítmo por dentro.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
