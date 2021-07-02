@@ -161,7 +161,7 @@ Quería agradecer también a mis amigos por estar siempre dispuestos a sacar un 
 
 Gracias también a mis compañeros con los que he pasado estos últimos años de mi vida y una etapa muy importante, sin ellos esto hubiera sido aún más difícil. Han hecho que las clases, las tardes de estudio, las prácticas y en general la carrera, sea más divertida.
 
-Por último, agradecer a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo y a Juanda por dejarme colaborar en su página.
+Por último, agradecer a Gregorio su manera de explicar y su disposición para ayudarme siempre que he necesitado algo y a Juanda por dejarme colaborar en su proyecto.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,7 +173,7 @@ Por último, agradecer a Gregorio su manera de explicar y su disposición para a
 
 El \emph{machine learning} (aprendizaje automático) es algo que está a la orden del día, se usa para prácticamente todo, desde coches que se conducen solos, hasta recomendaciones de series o películas en cualquier plataforma. \texttt{LearningML} pretende acercar esta tecnología a cualquier persona que sin grandes conocimientos sobre el tema pueda probar y ver como la web, primero aprende y después clasifica una imagen o un texto utilizando el algoritmo que elija el usuario.
  
-Este proyecto consiste en implementar dos nuevos algoritmos de \emph{machine learning} para la aplicación web  \texttt{LearningML}\footnote{\url{https://learningml.org/editor/}}. Por un lado el algoritmo de K-NN o K-vecinos más cercanos y por otro el de Naive Bayes. Para ello ha sido necesario cambiar la estructura de la aplicación web de manera que de cara a futuras actualizaciones o mejoras se puedan hacer de manera más sencilla.
+Este proyecto consiste en implementar dos nuevos algoritmos de \emph{machine learning} para la aplicación web \texttt{LearningML}\footnote{\url{https://learningml.org/editor/}}. Por un lado el algoritmo de K-NN o K-vecinos más cercanos y por otro el de Naive Bayes. Para ello ha sido necesario cambiar la estructura de la aplicación web de manera que de cara a futuras actualizaciones o mejoras se puedan hacer de manera más sencilla.
 
 \texttt{LearningML} usa el lenguaje TypeScript y está creada con Angular, por lo que después de la reestructuración solo ha sido necesario crear dos nuevos servicios, uno para cada clasificador, y llamar a sus funciones desde otro servicio que está por encima de ambos y elige que modelo usar. Dentro de estos servicios, se han construido dos funciones: una para entrenar el modelo y otra para probarlo. Estas funciones se lanzan de manera asíncrona para que encaje con lo que ya estaba construido previamente.
 
@@ -189,7 +189,7 @@ Este proyecto consiste en implementar dos nuevos algoritmos de \emph{machine lea
 
 Machine learning is something that is the order of the day, it is used for practically everything, from self-driving cars to recommendations of series or films on any platform. \texttt{LearningML} aims to bring this technology to anyone without great knowledge on the subject can try and see how the web, first learns and then classifies an image or text using the algorithm of the user's choice.
 
-This project consists of implementing two new algorithms of machine learning on the existing LearningML web application. On the one hand, the K-NN or K-nearest neighbours algorithm and on the other hand, the Naive Bayes algorithm. To do this, it has also been necessary to change the structure of the website so that future updates or improvements can be made more easily.
+This project consists of implementing two new algorithms of machine learning on the existing \texttt{LearningML} web application. On the one hand, the K-NN or K-nearest neighbours algorithm and on the other hand, the Naive Bayes algorithm. To do this, it has also been necessary to change the structure of the website so that future updates or improvements can be made more easily.
 
 This web application uses the TypeScript language and is created with Angular, so after the restructuring it has only been necessary to create two new services, one for each classifier, and call their functions from another service that is above both and chooses which model to use. Within these services, two functions have been built, one to train the model and one to test it. These functions are launched asynchronously to fit in with what was previously built.
 
@@ -234,9 +234,9 @@ El \emph{machine learning} (o aprendizaje automático) es la rama de la intelige
 \section{Presentación de la aplicación}
 \label{sec:presentacionaplicacion}
 
-Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algoritmos de aprendizaje automático de Naive Bayes y K-NN en la web de LearningML que actualmente solo utiliza el método de redes neuronales para clasificar imágenes o texto.
+Este Trabajo Fin de Grado tiene como principal objetivo la integración de los algoritmos de aprendizaje automático de Naive Bayes y K-NN en la web de \texttt{LearningML} que actualmente solo utiliza el método de redes neuronales para clasificar imágenes o texto.
 
-\texttt{LearningML} es una aplicación web creada por Juan David Rodríguez García utilizando Angular y esta construida de tal manera que cualquier persona sin grandes conocimientos sobre el aprendizaje automático pueda crear un modelo, entrenarlo y después probarlo.
+\texttt{LearningML} es una aplicación web creada por Juan David Rodríguez García utilizando Angular y esta construida de tal manera que cualquier persona sin grandes conocimientos sobre el aprendizaje automático pueda crear un modelo, entrenarlo y después probarlo~\cite{garcia2020learningml,rodriguez2020introducing}. Ha sido evaluada en una intervención con estudiantes de 12 a 16 años y se ha mostrado su utilidad para aprender conceptos de inteligencia artificial y \emph{machine learning}~\cite{rodriguez2021evaluation}.
 
 La aplicación web además permite descargar el modelo creado en un archivo JSON para después poder cargarlo sin necesidad de crearlo de nuevo, esto es muy útil ya que de esta manera no se tienen que volver a introducir todas las entradas para el aprendizaje, sino que directamente se puede importar un modelo creado previamente e introducir una entrada para ver su funcionamiento.
 
@@ -249,7 +249,7 @@ También tiene la opción de registrarse y poder guardar los modelos en tu cuent
 La memoria empieza con un resumen, en el que se explica brevemente en que consiste el proyecto, así como las tecnologías que se han usado para llevarlo a cabo. A continuación, se sitúan los agradecimiento y los índices, tanto el general como el de figuras. Finalmente, van los seis capítulos en los que se divide la memoria.
 
 \begin{itemize}
-  \item \textbf{Capítulo 1: Introducción.} En el primer capítulo se hace una breve explicación de en que consiste la web de LearningML y la estructura que va a seguir el trabajo.
+  \item \textbf{Capítulo 1: Introducción.} En el primer capítulo se hace una breve explicación de en que consiste la web de \texttt{LearningML} y la estructura que va a seguir el trabajo.
   
   \item \textbf{Capítulo 2: Objetivos.} En este capítulo se describen los objetivos principales y específicos del trabajo y la planificación temporal de este.
   
@@ -257,10 +257,10 @@ La memoria empieza con un resumen, en el que se explica brevemente en que consis
 
   \item \textbf{Capítulo 4: Diseño e implementación.} Se describe de manera detallada tanto los cambios previos en la estructura como la arquitectura final de la aplicación web así como la implementación de los dos modelos de aprendizaje.
   
-  \item \textbf{Capítulo 5: Experimentos y validación.} Se comprueba si funcionan correctamente las funcionalidades implementadas en la web de LearningML.
+  \item \textbf{Capítulo 5: Experimentos y validación.} Se comprueba si funcionan correctamente las funcionalidades implementadas en la web de \texttt{LearningML}.
   
   \item \textbf{Capítulo 6: Conclusiones.} Por último, se repasa todo lo aprendido durante el desarrollo del proyecto y se comentan algunas mejoras o funciones que se podrían implementar en un futuro.
-  
+ 
 \end{itemize}
 
 
@@ -277,18 +277,18 @@ La memoria empieza con un resumen, en el que se explica brevemente en que consis
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-Este Trabajo Fin de Grado consiste en añadir a la aplicación web de LearningML los algoritmos de aprendizaje automático de Bayes y K-NN de manera intuitiva e independientemente de si se quieren clasificar textos o imágenes.
+Este Trabajo Fin de Grado consiste en añadir a la aplicación web de \texttt{LearningML} los algoritmos de aprendizaje automático de Bayes y K-NN de manera intuitiva e independientemente de si se quieren clasificar textos o imágenes.
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
 
 Para la realización del objetivo general se han planteado los siguientes objetivos específicos:
 \begin{itemize}
-  
-	\item Reorganizar la manera de trabajar de LearningML para separar la obtención de datos del algoritmo utilizado.
+ 
+	\item Reorganizar la manera de trabajar de \texttt{LearningML} para separar la obtención de datos del algoritmo utilizado.
  
 	\item Implementar el algoritmo de Bayes y K-NN para que funcionen como dos clasificadores de tal forma que primero entrenen con las entradas de aprendizaje y luego evalúen otra entrada proporcionada por el usuario y la asigne correctamente a uno de los grupos creados previamente.
-  
+ 
 	\item Añadir en la interfaz una manera de poder elegir el tipo de algoritmo que se quiere utilizar de forma independiente a si los elementos a clasificar son texto o imágenes.
 
 	\item Dejar que el usuario pueda tocar algunos de los parámetros de los clasificadores.
@@ -299,13 +299,13 @@ Para la realización del objetivo general se han planteado los siguientes objeti
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
-La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en enero de 2021 y quería hacerlo a la vez que las prácticas entonces me puse en contacto con Gregorio y me comentó esto. Me llamo la atención la aplicación web de LearningML, ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
+La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en enero de 2021 y quería hacerlo a la vez que las prácticas entonces me puse en contacto con Gregorio y me comentó esto. Me llamo la atención la aplicación web de \texttt{LearningML}, ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
 
-En principio este proyecto iba a ser tanto prácticas como TFG y le iba a poder dedicar bastante horas todos los días, sin embargo, me aceptaron en unas prácticas y no tuve tanto tiempo ya que estas eran de jornada completa. Además de esto, aun tenía una asignatura pendiente así que era difícil establecer un horario concreto para dedicarle tiempo al proyecto. Cuando no tenía un examen cerca, al salir de trabajar me ponía con ello un rato y luego los fines de semana por la mañana también le dedicaba algo de tiempo.
+He realizado el proyecto mientras realizaba unas prácticas de jornada completa. Además de esto, aun tenía una asignatura pendiente así que era difícil establecer un horario concreto para dedicarle tiempo al proyecto. Cuando no tenía un examen cerca, al salir de trabajar me ponía con ello un rato y luego los fines de semana por la mañana también le dedicaba algo de tiempo.
 
-Recuerdo que primero tuve que aprender cómo funcionaba Angular y TypeScript con un curso que tiene Juanda. Estuve practicando y familiarizándome con la forma de trabajar en Angular.
+Recuerdo que primero tuve que aprender cómo funcionaba Angular y TypeScript con un curso que tiene Juan David Rodríguez. Estuve practicando y familiarizándome con la forma de trabajar en Angular.
 
-Después tuve varias reuniones con Juanda (creador de LearningML) para ver cómo funcionaba la aplicación de LearningML y donde había que añadir los cambios.
+Después tuve varias reuniones con Juan David Rodríguez (creador de \texttt{LearningML}) para ver cómo funcionaba la aplicación de \texttt{LearningML} y donde había que añadir los cambios.
 También tuve que buscar que bibliotecas ya construidas de Bayes y K-NN que pudiéramos adaptar para usarlas en la aplicación web y finalmente ponerme a ello. Para K-NN si que conseguí encontrar una biblioteca que me sirvió aunque por cómo se obtienen los datos, había que procesarlos de nuevo antes de usarlos. Para Bayes no encontré nada y tuve que crear el clasificador desde cero lo que me llevo algo más de tiempo que en el otro caso.
 Por último, quedaba la tarea de trasladar todo eso al papel. Me puse en contacto con mi tutor y enseguida me paso una plantilla con los apartados a rellenar y comencé a hacerlo hasta que finalmente, con no mucho tiempo de margen para entregar el trabajo, terminé.
 
@@ -340,7 +340,7 @@ Algunas de las principales características de HTML5 son:
 
 		\item Web Storage: permite almacenar datos del lado del cliente, cuando la sesión está activa.
 
-        	\item Canvas: que permite hacer dibujos, juegos, animaciones, etc.
+       	\item Canvas: que permite hacer dibujos, juegos, animaciones, etc.
 
 		\item Geolocalización: permite mostrar e interactuar con un mapa de Google Maps.
 
@@ -450,7 +450,7 @@ Angular dispone de un enrutador, módulo que contiene un servicio para definir l
 Las aplicaciones web se suelen desarrollar siguiendo una serie de pautas. El patrón que sigue Angular es el Modelo Vista Controlador (MVC), cuyos elementos son~\cite{mvc} :
 
 \begin{itemize}
-  
+ 
 	\item \textbf{Modelo:} es la representación de los datos de toda la aplicación y, por tanto, maneja las consultas y todas las acciones relacionadas con base de datos en caso de que las hubiera. También tratará los datos para cumplir con las funcionalidades de la aplicación.
  
 	\item \textbf{Vista:} recibe los datos y los sirve al usuario final en la interfaz. Ni el controlador ni el modelo se preocupan por el diseño ni la apariencia final, de todo el apartado visual se encargarán las vistas.
@@ -462,7 +462,7 @@ Las aplicaciones web se suelen desarrollar siguiendo una serie de pautas. El pat
 Las principales ventajas del MVC son las siguientes:
 
 \begin{itemize}
-  
+ 
 	\item Mejora la escalabilidad, puesto que es un modelo sencillo en el que cada tipo de lógica esta separado.
  
 	\item Facilita mantenimiento.
@@ -479,12 +479,12 @@ Angular CLI (Command Line Interface)~\cite{articulobayes} es una herramienta de 
 \section{TensorFlow} 
 \label{sec:tensorflow}
 
-TensorFlow~\cite{tensorflow} es un sistema de aprendizaje automático de segunda generación creado por Google Brain y es la herramienta más utilizada en el mundo del Deep Learning. La decisión de liberar TensorFlow se tomó en noviembre de 2015, por lo que hoy es posible acceder a esta herramienta libremente y editarla en función de las necesidades. Esta biblioteca, es una gran plataforma para construir y entrenar redes neuronales, que permiten detectar y descifrar patrones y correlaciones, similares al aprendizaje o razonamiento que usamos los humanos. 
+TensorFlow~\cite{tensorflow} es un sistema de aprendizaje automático de segunda generación creado por Google Brain y es la herramienta más utilizada en el mundo del Deep Learning. La decisión de liberar \texttt{TensorFlow} se tomó en noviembre de 2015, por lo que hoy es posible acceder a esta herramienta libremente y editarla en función de las necesidades. Esta biblioteca, es una gran plataforma para construir y entrenar redes neuronales, que permiten detectar y descifrar patrones y correlaciones, similares al aprendizaje o razonamiento que usamos los humanos. 
 
 \subsection{MobileNets} 
 \label{sec:mobilenets}
 
-MobileNets~\cite{mobilenets} es, además de una biblioteca de TensorFlowq que vamos a utilizar, una red neuronal convolucional. Es más eficiente ya que se basa en una capa convolucional normal, de la dimensión deseada, pero con un solo filtro. De esta manera, al pasar información por una capa se genera una sola convolución, que esta a su vez sirve como entrada a otra capa de convolución de tamaño fijo de filtro 1x1, con el número de filtros deseados en la convolución a sustituir.
+MobileNets~\cite{mobilenets} es, además de una biblioteca de \texttt{TensorFlow}q que vamos a utilizar, una red neuronal convolucional. Es más eficiente ya que se basa en una capa convolucional normal, de la dimensión deseada, pero con un solo filtro. De esta manera, al pasar información por una capa se genera una sola convolución, que esta a su vez sirve como entrada a otra capa de convolución de tamaño fijo de filtro 1x1, con el número de filtros deseados en la convolución a sustituir.
 
 Aunque todo esto suena bastante complejo, lo que a nosotros nos interesa es que vamos a usar esta biblioteca para transformar las imágenes en vectores que serán las entradas del clasificador sin importar el tipo. Lo que haremos será quitar la última capa de la red neuronal que genera MobileNets y quedarnos con ese vector.
 
@@ -537,17 +537,17 @@ En la Figura~\ref{fig:knn} podemos ver cómo en este caso las características s
 
 En esta sección veremos cómo se ha llevado a cabo la construcción de los dos nuevos servicios y cómo se ha tenido que reestructurar la aplicación web de \texttt{LearningML}.
 
-\section{Arquitectura antigua de LearningML} 
+\section{Arquitectura antigua de \texttt{LearningML}} 
 \label{sec:arquitecturaantigua}
 
 Lo primero que hay que tener claro a la hora de hacer algún cambio en una aplicación web es su estructura.
-Por eso vamos a ver cómo funcionaba LearningML antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que LearningML está construido por Angular, por lo que esta compuesto por módulos, componentes y servicios. Es importante recordar que antes solo se usaba un algoritmo (redes neuronales) de ahí esta estructura.
+Por eso vamos a ver cómo funcionaba \texttt{LearningML} antes de realizar el cambio en su forma de trabajar. Hay que tener en cuenta que \texttt{LearningML} está construido por Angular, por lo que esta compuesto por módulos, componentes y servicios. Es importante recordar que antes solo se usaba un algoritmo (redes neuronales) de ahí esta estructura.
 
 Según estaba construido \texttt{LearningML}, en el módulo principal \texttt{AppModule} se cargaba el componente \texttt{ml-model} y el componente \texttt{ml-test-model} uno para construir el modelo y otro para probarlo respectivamente. Estos dos componentes tenían importados a su vez los servicios \texttt{image-classifier} y \texttt{classifier}, uno para crear un modelo de imágenes y otro de texto. El servicio para clasificar texto se llamaba únicamente \texttt{classifier} porque fue el primero que se incorporó cuando Juan David Rodríguez, el co-tutor del proyecto, creó la aplicación web y no sabía si se añadirían más en un futuro.
 
-De manera transversal a todo esto teníamos el servicio \texttt{labeled-data-manager}, que era una especie de ``cajón de sastre" donde se almacenan algunos datos que necesitábamos en los otros servicios y componentes.
+De manera transversal a todo esto teníamos el servicio \texttt{labeled-data-manager}, que era una especie de ``cajón de sastre'' donde se almacenan algunos datos que necesitábamos en los otros servicios y componentes.
 
-Para la parte de test había un solo componente llamado \texttt{ml-test-model} que llamaba a la función \texttt{classify} de \texttt{image-classifier} o a la función  \texttt{run} de \texttt{classifier}, dependiendo de si se estaban clasificando imágenes o textos respectivamente.
+Para la parte de test había un solo componente llamado \texttt{ml-test-model} que llamaba a la función \texttt{classify} de \texttt{image-classifier} o a la función \texttt{run} de \texttt{classifier}, dependiendo de si se estaban clasificando imágenes o textos respectivamente.
 En la Figura~\ref{fig:modeloantiguo} se puede ver que contenía cada uno de los servicios nombrados anteriormente.
 
 \begin{figure}
@@ -558,12 +558,12 @@ En la Figura~\ref{fig:modeloantiguo} se puede ver que contenía cada uno de los 
 
 
 \begin{itemize}
-  
+ 
 	\item Labeled-Data-Manager: Era un servicio que se encargaba de guardar los datos en bruto, ya fueran imágenes o textos con la función \texttt{addEntry}. También almacenaba las etiquetas, es decir, las distintas posibles clases a las que podía pertenecer una entrada utilizando la función \texttt{addLabel}. Por último, guardaba el tipo de modelo que se quería construir directamente en la variable \texttt{modelType}. En caso de que cargásemos los datos de un JSON, también es aquí donde se realizaba tanto la carga como la exportación.
  
 	\item ImageClassifier: Dentro de este servicio encontrábamos tres funciones principales, \\ \texttt{extractFeature} que se encargaba de transformar las imágenes de entrada en tensores, \texttt{train} que construía el modelo y lo entrenaba y por último \texttt{classify} que evaluaba la imagen de entrada de test y la asignaba a una de las posibles opciones (etiquetas). Dentro de esta última función teníamos que volver a llamar a \texttt{extractFeature} para que transformase la imagen a tensor y poder analizarla.
 
-	\item Classifier: Este servicio lo que hacía era transformar las entradas de texto en bruto en vectores, en esta ocasión se utilizaba la biblioteca BrainText, que es una adaptación que hizo Juanda de la biblioteca Brain.js\footnote{\url{https://brain.js.org/}}. De nuevo, contenía la función \texttt{train} encargada de crear el modelo y entrenarlo y la función \texttt{run}, que sería el equivalente a la función \texttt{classify} del punto anterior, es decir, leía el texto introducido, lo trataba y lo evaluaba y por último determinaba a cuál de los grupos o etiquetas pertenecía.
+	\item Classifier: Este servicio lo que hacía era transformar las entradas de texto en bruto en vectores, en esta ocasión se utilizaba la biblioteca BrainText, que es una adaptación que hizo Juan David Rodríguez de la biblioteca Brain.js\footnote{\url{https://brain.js.org/}}. De nuevo, contenía la función \texttt{train} encargada de crear el modelo y entrenarlo y la función \texttt{run}, que sería el equivalente a la función \texttt{classify} del punto anterior, es decir, leía el texto introducido, lo trataba y lo evaluaba y por último determinaba a cuál de los grupos o etiquetas pertenecía.
 
 \end{itemize}
 
@@ -584,12 +584,12 @@ Esta estructura simplifica mucho las cosas y hace que el código sea más fácil
 \end{figure}
 
 \begin{itemize}
-  
+ 
 	\item Labeled-Data-Manager: Este servicio como ya se ha comentado sigue siendo utilizado en todo el resto de servicios y componentes, con la diferencia de que ahora, además de los datos de etiquetas, datos en bruto de las entradas y tipo de modelo que ya guardaba antes, guarda también el tipo de algoritmo en la variable \texttt{mlAlgorithm}.
  
 	\item Feature-Extraction: En este servicio encontramos la función de \texttt{extractDatasetFeatures} que es la encargada de llamar a los otros dos servicios dependiendo de si se quieren extraer características de una imagen o de un texto.
 \begin{itemize}
-  
+ 
 	\item Feature-Extractor-Image: Se encarga de extraer las características de las imágenes, es decir, de convertir la imagen en bruto a un tensor. La función que realmente hace esto de obtener el tensor dada una imagen es \texttt{extractInstanceFeatures}. Aunque tiene más funciones para por ejemplo saber que etiqueta corresponde a cada imagen.
 
 	\item Feature-Extractor-Text: Se encarga de extraer las características de los textos, por tanto, con un texto como entrada obtenemos un tensor. De nuevo, para que la arquitectura tenga una estructura coherente, la función recibe el mismo nombre que en el caso de las imágenes \texttt{extractInstanceFeatures}. 
@@ -597,8 +597,8 @@ Esta estructura simplifica mucho las cosas y hace que el código sea más fácil
 
 	\item ml-Algorithm: Este servicio cuenta con dos funciones principales. \texttt{train} encargada de elegir a que sub-servicio llamar dependiendo del algoritmo que se quiere utilizar. Y la función \texttt{classify} que de nuevo, elige que sub-servicio utilizar en función del algoritmo.
 \begin{itemize}
-  
-	\item ml-Algorithm-knn: Cuenta con dos funciones que son las que llama el servicio que esta por encima para entrenar (\texttt{train}) o evaluar  (\texttt{classify}) una entrada en el caso de que el algoritmo elegido por el usuario sea K-NN.
+ 
+	\item ml-Algorithm-knn: Cuenta con dos funciones que son las que llama el servicio que esta por encima para entrenar (\texttt{train}) o evaluar (\texttt{classify}) una entrada en el caso de que el algoritmo elegido por el usuario sea K-NN.
 
 	\item ml-Algorithm-bayes: Cuenta con las mismas funciones que K-NN pero en este caso construye o evalúa un clasificador utilizando el algoritmo de Naive Bayes.
 \end{itemize}
@@ -622,13 +622,13 @@ En este caso, lo primero que se hizo fue añadir en la interfaz gráfica la opci
 \end{figure}
 
 Dependiendo de la opción que elijamos en el desplegable, nos dejará modificar unos parámetros u otros. 
-En el caso de K-NN nos deja elegir el número de vecinos que queremos tener en cuenta a la hora de clasificar, es decir, el valor de \emph{K}. Esto se hace en el mismo archivo en la parte que se muestra en la Figura~\ref{fig:nvecinosknn}. En la primera linea se comprueba si el algoritmo es K-NN para ver si se muestra esto o no, y en la tercera otorgamos el valor mínimo y máximo del deslizable así como el intervalo entre un valor y otro, en este caso 1. También recogemos su valor en \texttt{params.knn.k} para después poder utilizarlo.
+En el caso de K-NN nos deja elegir el número de vecinos que queremos tener en cuenta a la hora de clasificar, es decir, el valor de \emph{K}. Esto se hace en el mismo archivo en la parte que se muestra en la Figura~\ref{fig:nvecinosknn}. En la primera línea se comprueba si el algoritmo es K-NN para ver si se muestra esto o no, y en la tercera otorgamos el valor mínimo y máximo del deslizable así como el intervalo entre un valor y otro, en este caso 1. También recogemos su valor en \texttt{params.knn.k} para después poder utilizarlo.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, keepaspectratio]{img/nvecinosknn}
 	\caption{Parte de código encargada de recoger el valor de K en el algoritmo KNN}				
-        \label{fig:nvecinosknn}
+     \label{fig:nvecinosknn}
 \end{figure}
 
 \section{Datos de entrada} 
@@ -646,7 +646,7 @@ A la hora de crear un nuevo servicio, tenemos que tener claro cómo vienen los d
 Ahora vamos a ver en que se transforman estos datos para ver que va a recibir nuestro clasificador. La función \texttt{train} de nuestro clasificador que se llamará en el servicio \texttt{ml-algorithm} tendrá como entrada \texttt{features}. Este objeto se compone de tres items:
 
 \begin{itemize}
-  
+ 
 	\item \texttt{text\_labels}: Es simplemente un array con los nombres de las etiquetas, para después poder equiparar los datos del tensor con la realidad. En la Figura~\ref{fig:textlabels} tenemos la estructura del dato.
 
 \begin{figure}
@@ -680,7 +680,7 @@ Ahora vamos a ver en que se transforman estos datos para ver que va a recibir nu
 \section{Crear el clasificador de K-NN} 
 \label{sec:knn}
 
-Para crear el clasificador de K-NN lo primero es tener claro cómo funciona para poder pasarlo a lenguaje de programación. Vamos a verlo con un ejemplo, en la Figura~\ref{fig:ejemploknn} podemos ver que tenemos tres grupos, lo que para nosotros serán las etiquetas y dos características, la altura y el peso, que en nuestro caso serán 1024. 
+Para crear el clasificador de K-NN lo primero es tener claro cómo funciona para poder pasarlo a lenguaje de programación. Vamos a verlo con un ejemplo: en la Figura~\ref{fig:ejemploknn} podemos ver que tenemos tres grupos, lo que para nosotros serán las etiquetas y dos características, la altura y el peso, que en nuestro caso serán 1024. 
 
 \begin{figure}
 	\centering
@@ -689,14 +689,14 @@ Para crear el clasificador de K-NN lo primero es tener claro cómo funciona para
 	\label{fig:ejemploknn}
 \end{figure}
 
-El modelo coloca los datos de entrenamiento en el espacio y después a la hora de evaluar, según las características que recibe, sitúa el dato de evaluación. Por último, mirará los K vecinos más cercanos, en este caso vamos a suponer 3, y asignará la nueva entrada al grupo del que tenga un mayor número de vecinos cercanos, en este caso tiene dos vecinos rojos y uno blanco, por lo que será clasificado como adulto.
+El modelo coloca los datos de entrenamiento en el espacio y después a la hora de evaluar, según las características que recibe, sitúa el dato de evaluación. Por último, mirará los K vecinos más cercanos, en este caso vamos a suponer tres, y asignará la nueva entrada al grupo del que tenga un mayor número de vecinos cercanos, en este caso tiene dos vecinos rojos y uno blanco, por lo que será clasificado como adulto.
 
 \subsection{Función Train} 
 \label{sec:funciontrainknn}
 
 Tanto esta función como la siguiente se pueden encontrar en el archivo /learningml-editor-develop/src/app/services/mlAlgorithms/ml-algorithm-knn.ts.
 
-Por cómo funciona la biblioteca que vamos a utilizar de TensorFlow, necesitamos en primer lugar construir el modelo con la función  \texttt{knnClassifier.create()} (previamente hemos importado la biblioteca como knnClassifier). Lo que hará este objeto será ir situando las entradas como los puntos que hemos visto en el ejemplo, pero en este caso el espacio será de 1024 dimensiones. Este modelo funciona de tal forma que tenemos que ir añadiendo entradas de entrenamiento con la función \texttt{.addExample()}. Esta función tiene que recibir dos parámetros, por un lado debe tener las características de una entrada en un tensor y por otro la etiqueta a la que pertenece indicada como un número. Podemos ver las estructuras de entrada en la Figura~\ref{fig:entradasclasificadorknn}.
+Por cómo funciona la biblioteca que vamos a utilizar de \texttt{TensorFlow}, necesitamos en primer lugar construir el modelo con la función \texttt{knnClassifier.create()} (previamente hemos importado la biblioteca como knnClassifier). Lo que hará este objeto será ir situando las entradas como los puntos que hemos visto en el ejemplo, pero en este caso el espacio será de 1024 dimensiones. Este modelo funciona de tal forma que tenemos que ir añadiendo entradas de entrenamiento con la función \texttt{.addExample()}. Esta función tiene que recibir dos parámetros, por un lado debe tener las características de una entrada en un tensor y por otro la etiqueta a la que pertenece indicada como un número. Podemos ver las estructuras de entrada en la Figura~\ref{fig:entradasclasificadorknn}.
 
 \begin{figure}
 	\centering
@@ -708,11 +708,11 @@ Por cómo funciona la biblioteca que vamos a utilizar de TensorFlow, necesitamos
 Vamos a ver cómo conseguir este tipo de dato para cada caso:
 
 \begin{itemize}
-	\item Características: En este caso es sencillo, ya que solamente tenemos que deshacer el vector que tenemos en \texttt{tensor\_inputs} y obtener un vector por cada característica. TensorFlow cuenta con la función \texttt{unstack} que hace precisamente eso.
+	\item Características: En este caso es sencillo, ya que solamente tenemos que deshacer el vector que tenemos en \texttt{tensor\_inputs} y obtener un vector por cada característica. \texttt{TensorFlow} cuenta con la función \texttt{unstack} que hace precisamente eso.
 \begin{verbatim}
 let inputs = tf.unstack(features.tensor_inputs);
 \end{verbatim}	
-	\item Etiquetas: Para obtener esta variable también tenemos que deshacer el vector de etiquetas \texttt{tensor\_labels} en un tensor para cada entrada (estos tensores se guardan en la variable \texttt{\_labels}). Después de esto tenemos que remplazar el array de tres posiciones que teníamos por un solo número, de eso se encarga la función auxiliar  \texttt{getClassIndex} que obtiene para cada array su numero correspondiente, en este caso al array [1,0,0] le corresponderá el valor 0, al array [0,1,0] el valor 1 y al array [0,0,1] el valor 2. Este formato de etiquetas final se guarda en la variable \texttt{labels}.
+	\item Etiquetas: Para obtener esta variable también tenemos que deshacer el vector de etiquetas \texttt{tensor\_labels} en un tensor para cada entrada (estos tensores se guardan en la variable \texttt{\_labels}). Después de esto tenemos que remplazar el array de tres posiciones que teníamos por un solo número, de eso se encarga la función auxiliar \texttt{getClassIndex} que obtiene para cada array su numero correspondiente, en este caso al array [1,0,0] le corresponderá el valor 0, al array [0,1,0] el valor 1 y al array [0,0,1] el valor 2. Este formato de etiquetas final se guarda en la variable \texttt{labels}.
 \end{itemize}
 
 Por último, queda construir un bucle que vaya añadiendo todos los ejemplos, es decir, que recorra las posiciones de los dos arrays que tenemos pasándoselas como argumentos a la función \texttt{addExample} que tiene el modelo (objeto) que hemos creado al principio.
@@ -785,10 +785,9 @@ Sigamos con el ejemplo, vamos a verlo para una etiqueta, pero sería de la misma
 En esta misma imagen tenemos también la probabilidad de la etiqueta televisión, que en este caso es la mayor, ya que aunque su primera columna es 1/10 por que solo teníamos una entrada de ejemplo con esa etiqueta, como las tres características tenían exactamente esos valores, sale la probabilidad más alta de las cuatro.
 
 Viendo el ejemplo, es fácil darse cuenta de que estas probabilidades van a ser muy bajas cuando tengamos 1024 características, pues estaremos multiplicando 1024 veces (recordar que también hay que multiplicar por la probabilidad simple de la etiqueta) números menores que uno, o uno en el mejor de los casos.
-También es muy posible que para cierta etiqueta alguna característica nunca haya tenido el valor introducido en la entrada de evaluación y si es así esta etiqueta automáticamente valdrá 0, para evitar esto, cuando esto ocurre no se tiene en cuenta esa probabilidad. De igual forma, para intentar evitar números muy pequeños, como ya se ha comentado antes, se han dado 5 valores posibles a cada etiqueta.
+También es muy posible que para cierta etiqueta alguna característica nunca haya tenido el valor introducido en la entrada de evaluación y si es así esta etiqueta automáticamente valdrá 0, para evitar esto, cuando esto ocurre no se tiene en cuenta esa probabilidad. De igual forma, para intentar evitar números muy pequeños, como ya se ha comentado antes, se han dado cinco valores posibles a cada etiqueta.
 
-Vamos a ver cómo pasar todo esto a código, lo primero que se ha hecho ha sido transponer el array de entradas, para de esta manera tener un array en el que cada posición es una etiqueta con todos sus valores en las distintas entradas, es decir, será un array de 1024 en el que en la primera posición tendremos un array con todos los valores de la primera característica. Una vez tenemos esto, toca normalizar los valores entre 0 y 100. Podemos ver el array en la imagen 
-~\ref{fig:caracteristicasnormalizadas}. Lo que vemos en la imagen serían los valores para las primeras 4 características (primera fila todos los valores de la primera característica para cada entrada de ejemplo), tenemos 60 valores para cada una porque se han introducido esas entradas.
+Vamos a ver cómo pasar todo esto a código, lo primero que se ha hecho ha sido transponer el array de entradas, para de esta manera tener un array en el que cada posición es una etiqueta con todos sus valores en las distintas entradas, es decir, será un array de 1024 en el que en la primera posición tendremos un array con todos los valores de la primera característica. Una vez tenemos esto, toca normalizar los valores entre 0 y 100. Podemos ver el array en la Figura~\ref{fig:caracteristicasnormalizadas}. Lo que vemos en la imagen serían los valores para las primeras cuatro características (primera fila todos los valores de la primera característica para cada entrada de ejemplo), tenemos 60 valores para cada una porque se han introducido esas entradas.
 
 \begin{figure}
 	\centering
@@ -851,7 +850,7 @@ En esta sección vamos a realizar algunas comprobaciones para ver si los clasifi
 \section{Prueba del clasificador de K-NN} 
 \label{sec:pruebaknn}
 
-Hemos creado un modelo con tres clases (cara, mano y puño) y en el que para cada clase hemos añadido 11, 12 y 15 fotos respectivamente, aunque lo ideal sería añadir el mismo número de fotos en cada etiqueta de esta manera podemos ver su funcionamiento cuando la situación no es óptima. En la figura~\ref{fig:fotosentrada} podemos ver las entradas. Después de esto, elegimos el clasificador de K-NN y el número de vecinos a tener en cuenta para la clasificación (valor del parámetro K) y pulsamos el botón de aprender a reconocer imágenes.
+Hemos creado un modelo con tres clases (cara, mano y puño) y en el que para cada clase hemos añadido 11, 12 y 15 fotos respectivamente, aunque lo ideal sería añadir el mismo número de fotos en cada etiqueta de esta manera podemos ver su funcionamiento cuando la situación no es óptima. En la Figura~\ref{fig:fotosentrada} podemos ver las entradas. Después de esto, elegimos el clasificador de K-NN y el número de vecinos a tener en cuenta para la clasificación (valor del parámetro K) y pulsamos el botón de aprender a reconocer imágenes.
 
 \begin{figure}
 	\centering
@@ -860,7 +859,7 @@ Hemos creado un modelo con tres clases (cara, mano y puño) y en el que para cad
 	\label{fig:fotosentrada}
 \end{figure}
 
-Ahora en la sección de la derecha vamos a hacer (o seleccionar del ordenador) una foto para que la clasifique el modelo. Vamos a comenzar primero con utilizar una entrada de la clase cara y ver que clase se le asigna. Figura~\ref{fig:testcaraknn}. Como podemos ver debajo de la imagen nos muestra el porcentaje de que la entrada evaluada pertenezca a una clase u otra, en este caso ha acertado completamente ya que nos indica un 100\% en la etiqueta cara. Se han hecho varias comprobaciones más con imágenes de la clase cara y funciona correctamente.
+Ahora en la sección de la derecha vamos a hacer (o seleccionar del ordenador) una foto para que la clasifique el modelo. Vamos a comenzar primero con utilizar una entrada de la clase cara y ver que clase se le asigna (véase la Figura~\ref{fig:testcaraknn}). Como podemos ver debajo de la imagen nos muestra el porcentaje de que la entrada evaluada pertenezca a una clase u otra, en este caso ha acertado completamente ya que nos indica un 100\% en la etiqueta cara. Se han hecho varias comprobaciones más con imágenes de la clase cara y funciona correctamente.
 
 \begin{figure}
 	\centering
@@ -869,7 +868,7 @@ Ahora en la sección de la derecha vamos a hacer (o seleccionar del ordenador) u
 	\label{fig:testcaraknn}
 \end{figure}
 
-Vamos ahora a comprobar que ocurre si introducimos la imagen de una mano. Figura~\ref{fig:testmanoknnbien}. En este caso si asigna correctamente la imagen a la etiqueta que le corresponde, sin embargo, probando algunas veces más (Figura~\ref{fig:testmanoknnmal}) nos damos cuenta de que, aunque si se clasifique bien la imagen ya que el mayor porcentaje sigue siendo de la clase mano, comienza a tener algún porcentaje del tipo puño. Estos porcentajes, van a ser siempre múltiplos de 20 debido a que hemos elegido un parámetro K con valor 5, por lo que tendrá 1, 2, 3, 4 o 5 vecinos de una clase que se corresponderán con un 20, un 40, un 60, un 80 o un 100 por cien respectivamente. Teniendo esto en cuenta, en el caso de la Figura~\ref{fig:testmanoknnmal} que tiene un 60 \% de mano, querrá decir que 3 de los 5 vecinos más cercanos son de la clase mano y los otros 2 (40\%) son de la clase puño. Podemos observar, que pese a ser imágenes en las que puede haber algo más de confusión, sigue funcionando correctamente ya que el mayor porcentaje sigue siendo de la etiqueta correcta.
+Vamos ahora a comprobar que ocurre si introducimos la imagen de una mano (véase la Figura~\ref{fig:testmanoknnbien}). En este caso si asigna correctamente la imagen a la etiqueta que le corresponde, sin embargo, probando algunas veces más (Figura~\ref{fig:testmanoknnmal}) nos damos cuenta de que, aunque si se clasifique bien la imagen ya que el mayor porcentaje sigue siendo de la clase mano, comienza a tener algún porcentaje del tipo puño. Estos porcentajes, van a ser siempre múltiplos de 20 debido a que hemos elegido un parámetro K con valor 5, por lo que tendrá 1, 2, 3, 4 o 5 vecinos de una clase que se corresponderán con un 20, un 40, un 60, un 80 o un 100 por cien respectivamente. Teniendo esto en cuenta, en el caso de la Figura~\ref{fig:testmanoknnmal} que tiene un 60 \% de mano, querrá decir que 3 de los 5 vecinos más cercanos son de la clase mano y los otros 2 (40\%) son de la clase puño. Podemos observar, que pese a ser imágenes en las que puede haber algo más de confusión, sigue funcionando correctamente ya que el mayor porcentaje sigue siendo de la etiqueta correcta.
 
 \begin{figure}
 	\centering
@@ -885,7 +884,7 @@ Vamos ahora a comprobar que ocurre si introducimos la imagen de una mano. Figura
 	\label{fig:testmanoknnmal}
 \end{figure}
 
-Por último queda evaluar la clase puño. De nuevo ocurre como con la clase mano, en algunos casos nos devuelve un porcentaje del 100\% para la clase correcta (Figura~\ref{fig:testpunoknnbien}) y en otros tiene cierto porcentaje de la clase mano (Figura~\ref{fig:testpunoknnmal}). En este caso podemos ver que tiene un 80\% en la etiqueta puño (4 de los vecinos más cercanos son de la clase puño) y un 20 \& de la etiqueta mano (uno de los cinco vecinos más cercanos pertenece a la clase mano). A pesar de esto, podemos decir que funciona correctamente ya que el mayor porcentaje es para la clase correcta.
+Por último queda evaluar la clase puño. De nuevo ocurre como con la clase mano, en algunos casos nos devuelve un porcentaje del 100\% para la clase correcta (Figura~\ref{fig:testpunoknnbien}) y en otros tiene cierto porcentaje de la clase mano (Figura~\ref{fig:testpunoknnmal}). En este caso podemos ver que tiene un 80\% en la etiqueta puño (4 de los vecinos más cercanos son de la clase puño) y un 20\% de la etiqueta mano (uno de los cinco vecinos más cercanos pertenece a la clase mano). A pesar de esto, podemos decir que funciona correctamente ya que el mayor porcentaje es para la clase correcta.
 
 \begin{figure}
 	\centering
@@ -964,14 +963,14 @@ En definitiva, el algoritmo se ha implementado tal y cómo es y funciona correct
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
-Creo que el resultado del trabajo ha sido bueno, teniendo en cuenta que quizás si hubiera tenido algo más de tiempo se podrían haber implementado algunas funciones más, las dos que más me llamaban la atención han quedado implementadas de manera correcta. De manera transversal a esto nos dimos cuenta de que teníamos que reestructurar la web y también se llevo a cabo.
+Creo que el resultado del trabajo ha sido bueno, teniendo en cuenta que quizás si hubiera tenido algo más de tiempo se podrían haber implementado algunas funciones más. Las dos que más me llamaban la atención han quedado implementadas de manera correcta. De manera transversal a esto nos dimos cuenta de que teníamos que reestructurar la web y también se llevo a cabo.
 
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
 Si volvemos a los objetivos marcados para este proyecto, uno de los objetivos principales era reorganizar \texttt{LearningML}, esto se ha conseguido ya que se ha reestructurado la web en cuanto a componentes y servicios se refiere, ha quedado con una estructura mucho más limpia y fácil de mantener y ampliar para que en un futuro sea más sencillo implementar mejoras.
 
-En cuanto al algoritmo de K-NN ha sido algo más fácil de implementar debido a que contábamos con la biblioteca de TensorFlow. Sin embargo, hubo que tratar los datos de entrada ya que por cómo se extraen las características no podíamos utilizarlos directamente, ya que en un primer lugar estaban pensados para el algoritmo de redes neuronales.
+En cuanto al algoritmo de K-NN ha sido algo más fácil de implementar debido a que contábamos con la biblioteca de \texttt{TensorFlow}. Sin embargo, hubo que tratar los datos de entrada ya que por cómo se extraen las características no podíamos utilizarlos directamente, ya que en un primer lugar estaban pensados para el algoritmo de redes neuronales.
 
 En el caso de Bayes estoy bastante orgulloso de haber conseguido implementarlo, me llevó bastantes mucho tiempo pasar el modelo en sí a lo que es lenguaje de programación, porque aunque entender el modelo no es tan difícil una vez lo tienes muy visto e interiorizado, hay que pensar cómo llevar eso a variables y funciones, además no me quedaba mucho tiempo para terminar y aunque el código es completamente funcional, seguro que se podría factorizar y optimizar. Aunque los resultados de este algoritmo no sean probabilidades coherentes, es así por cómo funciona, ya que al tener tantas características que pueden tomar tantos valores (incluso reduciéndolo a 5) las probabilidades para cada etiqueta son muy bajas, recordar de nuevo que estamos multiplicando 1024 números más pequeños que uno.
 
@@ -989,13 +988,13 @@ Aunque no haya usado esos lenguajes como tal, todas las asignaturas de programac
 Con las mejoras añadidas en la aplicación web \texttt{LearningML} he conseguido ampliar y mejorar los conocimientos adquiridos durante la carrera además de aprender otros totalmente nuevos. Entre ellos cabe destacar el aprendizaje de nuevas tecnologías que no había visto antes como por ejemplo:
 
 \begin{enumerate}
-  \item Angular: Aunque al principio tuve que dedicar bastante tiempo a entender cómo funcionaba, una vez lo comprendes todo te das cuenta de que facilita mucho el desarrollo y la programación. Es una herramienta muy potente que permite organizar una aplicación de cierto tamaño de manera más o menos sencilla, separando la parte del funcionamiento interno de la interfaz y a su vez permite pasar variables de una parte a otra. Es algo que si en un futuro intento crear una web de algún tipo lo tendré en cuenta.
+ \item Angular: Aunque al principio tuve que dedicar bastante tiempo a entender cómo funcionaba, una vez lo comprendes todo te das cuenta de que facilita mucho el desarrollo y la programación. Es una herramienta muy potente que permite organizar una aplicación de cierto tamaño de manera más o menos sencilla, separando la parte del funcionamiento interno de la interfaz y a su vez permite pasar variables de una parte a otra. Es algo que si en un futuro intento crear una web de algún tipo lo tendré en cuenta.
 
-  \item TypeScript: No me costó mucho adaptarme a este lenguaje y ahora que lo sé utilizar, diría que es más fácil entender cómo funciona un código en este lenguaje que en JavaScript.
+ \item TypeScript: No me costó mucho adaptarme a este lenguaje y ahora que lo sé utilizar, diría que es más fácil entender cómo funciona un código en este lenguaje que en JavaScript.
 
-  \item Programación asíncrona:  Aunque es un concepto que en sí no es complicado de entender, ya que consiste simplemente en que en ningún momento se bloquea el hilo principal y mientras se espera el resultado de algo el hilo principal continúa corriendo, a la hora de utilizarla es algo más complejo y tuve que pelearme bastante con ello hasta comprender su funcionamiento por completo y poder utilizarla.
+ \item Programación asíncrona: Aunque es un concepto que en sí no es complicado de entender, ya que consiste simplemente en que en ningún momento se bloquea el hilo principal y mientras se espera el resultado de algo el hilo principal continúa corriendo, a la hora de utilizarla es algo más complejo y tuve que pelearme bastante con ello hasta comprender su funcionamiento por completo y poder utilizarla.
 
-  \item DevTools de Chrome: Aunque era una herramienta que ya conocía, no sabía la cantidad de cosas que te permite hacer, desde poner puntos de interrupción hasta imprimir cualquier variable en la consola. Esto es muy útil ya que puedes ir comprobando si el código esta funcionando como debería paso a paso.
+ \item DevTools de Chrome: Aunque era una herramienta que ya conocía, no sabía la cantidad de cosas que te permite hacer, desde poner puntos de interrupción hasta imprimir cualquier variable en la consola. Esto es muy útil ya que puedes ir comprobando si el código esta funcionando como debería paso a paso.
 \end{enumerate}
 
 
@@ -1006,7 +1005,7 @@ Con las mejoras añadidas en la aplicación web \texttt{LearningML} he conseguid
 Como ya se ha comentado en algún apartado anterior, las mejoras que se pueden añadir a la aplicación web \texttt{LearningML} son prácticamente infinitas. Vamos a ver algunas de ellas: 
 
 \begin{itemize}
-  	\item  Implementar nuevos tipos de datos de entrada como podría ser el sonido para así poder clasificar archivos de audio o grabaciones. Debido a la reestructuración que se ha llevado a cabo, "solo" habría que crear el archivo \texttt{feature-extractor-audio} y hacerlo de tal manera que las salidas tengan la misma estructura que ya tienen los otros dos archivos de extracción de características.
+  	\item Implementar nuevos tipos de datos de entrada como podría ser el sonido para así poder clasificar archivos de audio o grabaciones. Debido a la reestructuración que se ha llevado a cabo, ``solo'' habría que crear el archivo \texttt{feature-extractor-audio} y hacerlo de tal manera que las salidas tengan la misma estructura que ya tienen los otros dos archivos de extracción de características.
 
 	\item Incluir otros modelos de aprendizaje como por ejemplo las máquinas de vectores de soporte.\footnote{\url{https://www.cienciadedatos.net/documentos/34_maquinas_de_vector_soporte_support_vector_machines}}
 
@@ -1014,7 +1013,7 @@ Como ya se ha comentado en algún apartado anterior, las mejoras que se pueden a
 
 	\item También queda por hacer la parte de relacionar los dos nuevos algoritmos implementados con Scratch, para poder crear el modelo desde ahí y después cargarlo en la propia web. 
 
-	\item Otra idea podría ser modificar el diseño o añadir algún botón de información en el que se explique de manera sencilla como funciona cada algoritmo por dentro.
+	\item Otra idea podría ser modificar el diseño o añadir algún botón de información en el que se explique de manera sencilla cómo funciona cada algoritmo por dentro.
 \end{itemize}
 
 
