@@ -113,7 +113,7 @@ IMPLEMENTACIÓN DE FUNCIONALIDADES EN LEARNINGML
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2021, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de julio de 2021, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -135,7 +135,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2021
+Fuenlabrada, a \qquad$\;\,$ de julio de 2021
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,7 +299,7 @@ Para la realización del objetivo general se han planteado los siguientes objeti
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
-La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en enero de 2021 y quería hacerlo a la vez que las prácticas entonces me puse en contacto con Gregorio y me comentó esto. Me llamo la atención la aplicación web de \texttt{LearningML}, ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
+La primera idea que tuve de empezar con el Trabajo Fin de Grado (TFG) fue en enero de 2021 y quería hacerlo a la vez que las prácticas. Me puse en contacto con Gregorio y me comentó este proyecto. Me llamo la atención la aplicación web de \texttt{LearningML}, ya que recuerdo haber utilizado Scratch en el colegio y me parecía interesante aportar algo aunque sea de manera indirecta a que los niños se interesen por la programación.
 
 He realizado el proyecto mientras realizaba unas prácticas de jornada completa. Además de esto, aun tenía una asignatura pendiente así que era difícil establecer un horario concreto para dedicarle tiempo al proyecto. Cuando no tenía un examen cerca, al salir de trabajar me ponía con ello un rato y luego los fines de semana por la mañana también le dedicaba algo de tiempo.
 
@@ -636,7 +636,7 @@ Esta estructura simplifica mucho las cosas y hace que el código sea más fácil
 	\item Feature-Extractor-Text: Se encarga de extraer las características de los textos, por tanto, con un texto como entrada obtenemos un tensor. De nuevo, para que la arquitectura tenga una estructura coherente, la función recibe el mismo nombre que en el caso de las imágenes \texttt{extractInstanceFeatures}. 
 \end{itemize}
 
-	\item ml-Algorithm: Este servicio cuenta con dos funciones principales. \texttt{train} encargada de elegir a que sub-servicio llamar dependiendo del algoritmo que se quiere utilizar. Y la función \texttt{classify} que de nuevo, elige que sub-servicio utilizar en función del algoritmo.
+	\item ml-Algorithm: Este servicio cuenta con dos funciones principales: i) \texttt{train} encargada de elegir a que sub-servicio llamar dependiendo del algoritmo que se quiere utilizar, y ii) \texttt{classify} que, de nuevo, elige que sub-servicio utilizar en función del algoritmo.
 \begin{itemize}
  
 	\item ml-Algorithm-knn: Cuenta con dos funciones que son las que llama el servicio que esta por encima para entrenar (\texttt{train}) o evaluar (\texttt{classify}) una entrada en el caso de que el algoritmo elegido por el usuario sea K-NN.
@@ -647,7 +647,7 @@ Esta estructura simplifica mucho las cosas y hace que el código sea más fácil
 
 \end{itemize}
 
-Finalmente, recalcar que esta estructura si se utiliza correctamente permite añadir un nuevo tipo de dato o de clasificador únicamente creando los nuevos servicios. Debemos tener en cuenta que estos nuevos servicios para que encajen con lo que ya hay deben tener al menos las mismas funciones que los ya existentes, ya que son a las que llaman los servicios superiores. De esta manera, sin apenas tocar los servicios superiores (solo habría que añadir en el punto donde se elije el tipo de dato a extraer o el tipo de modelo, la opción de elegir lo nuevo que hayamos creado) podemos implementar nuevas funcionalidades en un futuro de manera más limpia y sencilla.
+Finalmente, cabe recalcar que esta estructura, si se utiliza correctamente, permite añadir un nuevo tipo de dato o de clasificador únicamente creando los nuevos servicios. Debemos tener en cuenta que estos nuevos servicios, para que encajen con lo que ya hay, deben tener al menos las mismas funciones que los ya existentes, ya que son a las que llaman los servicios superiores. De esta manera, sin apenas tocar los servicios superiores (solo habría que añadir en el punto donde se elije el tipo de dato a extraer o el tipo de modelo, la opción de elegir lo nuevo que hayamos creado) podemos implementar nuevas funcionalidades en un futuro de manera más limpia y sencilla.
 
 
 
